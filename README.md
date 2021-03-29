@@ -1,45 +1,150 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Milestone Project 4 - Cook's Finest
+View live project <a href=“#”>here</a>
 
-Welcome Gregory4321,
+![Cook's Finest Am I Responsive image]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+Cook's Finest intro paragraph
 
-## Gitpod Reminders
+***
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+***
+## Table of Contents:
+* [What does it do and what does it need to fulfill?](#what-does-it-do-and-what-does-it-need-to-fulfill)
+* [User Experience](#user-experience)
+   * [User Goals](#user-goals)
+   * [User Stories](#user-stories)
+   * [Site Owner Goals](#site-owner-goals)
+* [Design](#design)
+    * [Research](#research)
+    * [The Five Planes of UX](#the-five-planes-of-ux)
+        * [Wireframes](#wireframes)
+        * [The Colour Scheme](#the-colour-scheme)
+        * [Font](#font)
+        * [The Logo](#the-logo)
+    * [Conclusion](#conclusion)
+* [Technologies Used](#technologies-used)
+* [Database Structure](#database-structure)
+* [Features](#features)
+   * [ Existing Features](#existing-features)
+   * [Future Features](#future-features)
+* [Testing](#testing)
+* [Deployment](#deployment)
+    * [Local Deployment](#local-deployment)
+    * [Deployment to Heroku](#deployment-to-heroku)
+* [Credits](#credits)
+    * [Content](#content)
+    * [Code](#code)
+    * [Media](#media)
+* [Acknowledgements](#acknowledgements)
+* [Special Thanks](#special-thanks)
+* [Disclaimer](#disclaimer)
 
-`python3 -m http.server`
+## **What does it do and what does it need to fulfill?**
 
-A blue button should appear to click: *Make Public*,
+***
 
-Another blue button should appear to click: *Open Browser*.
+## **User Experience**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User Stories:
 
-A blue button should appear to click: *Make Public*,
+[Back to Top](#table-of-contents)
 
-Another blue button should appear to click: *Open Browser*.
+***
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## **Design**
 
-## Updates Since The Instructional Video
+### Research
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### The Five Planes of UX
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+#### The Strategy Plane
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+#### The Scope Plane
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### The Structure Plane
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### The Skeleton Plane
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### The Surface Plane
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+##### Wireframes
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+[Back to Top](#table-of-contents)
 
---------
+##### The Colour Scheme
 
-Happy coding!
+##### Font
+
+##### The Logo
+
+#### Conclusion
+
+[Back to Top](#table-of-contents)
+
+***
+
+## **Technologies Used**
+
+### Languages
+
+### Libraries, Frameworks and Editors
+
+### Tools
+
+[Back to Top](#table-of-contents)
+
+***
+
+## **Database Structure**
+
+***
+
+## **Features**
+
+### Existing Features
+
+### Future Features
+
+***
+
+## Testing
+
+***
+
+## **Deployment**
+
+***
+
+### Local Deployment
+
+To run your own version of this project, it can be cloned or downloaded from Github
+
+***
+
+### Deployment to Heroku
+
+To deploy this project to Heroku:
+
+***
+
+## **Credits**
+
+#### Content
+
+#### Code
+
+#### Media
+
+***
+
+## **Acknowledgements**
+
+#### Pages used for inspiration
+
+#### Pages used for information
+
+#### Special thanks
+
+## **Disclaimer**
+
+This project was created for educational use only. It has been part of studying at the Code Institute as part of their Full Stack Web Developer Course.
