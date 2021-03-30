@@ -38,6 +38,8 @@ Cook's Finest is an online e-commerce store, offering a collection of kitchenwar
 * [Special Thanks](#special-thanks)
 * [Disclaimer](#disclaimer)
 
+***
+
 ## **What does it do and what does it need to fulfill?**
 
 This is my fourth and final milestone project of Code Institute's Full-Stack Web Developer Course. The projects main requirements were to build a Django web application with the use of HTML, CSS, JavaScript and Python, and utilising a relational database, allowing users to store and manipulate data records of a particular domain. This was achieved with the user profile model, where user's can add and edit their personal details, as well as the site owner having the ability to add, edit and delete products from the site.
@@ -45,7 +47,7 @@ The use of Stripe was also a requirement, which I fulfilled with the use of a ch
 IMPORTANT: The Stripe API used for handling payments is currently only for educational purposes and is not for taking real card payments. To test the payment functionality successfully, use the test card number Stripe provides, of "4242 4242 4242 4242", and then the other details chosen at random. 
 This project is a Django-Python web application, plugged into a PostgreSQL database, with SQLite3 used in the development, and was deployed using Heroku. The Bootstrap framework and grid system was used for effective styling across the pages of the site.
 
-### Project Goals
+### **Project Goals**
 
 My goal was to supply the home cook with a website where they can browse and purchase products they want for their home kitchen, and provide helpful tips and ideas on how to improve the kitchen space.
 
@@ -54,6 +56,10 @@ My goal was to supply the home cook with a website where they can browse and pur
 ## **User Experience**
 
 ### User Stories:
+
+Due to the the quantity of user stories for this project, and for best practice, I compiled my user stories on a spreadsheet to make it more clear which story is related to what and who.
+
+Please view the user stories spreadsheet [here]()
 
 [Back to Top](#table-of-contents)
 
