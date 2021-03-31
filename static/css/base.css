@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/home-hero-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* from Bulma */
+/* Centered and consistent size for FontAwesome */
+
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
