@@ -101,13 +101,47 @@ The user's profile page would consist of accordions to present the users details
 
 #### The Surface Plane
 
-
-
 From the beginning of my research, I had discovered that e-commerce sites would be very colourful, no matter what, due to the colurful content of product images. Because of this I wanted to keep the design simple, and not have overpowering colours that would clutter the site. The volume of content of an e-commerce site could easily make a site feel too busy, so I wanted to design this site so that a user could effortlessly navigate the site. Having researched and thought over the design process thoroughly, I created a workspace on Figma. I had initially sketched ideas onto paper, so now I could start to bring them to life. I created all the pages I had planned for desktop and mobile screen sizes, clearly showing how the structure of the content would mould together on the different sizes, creating more enhanced wireframes.
 
 Find the links to these wireframes below.
 
-##### Wireframes
+<details>
+<summary>Wireframes</summary>
+
+* Base Template
+    * [Desktop View]()
+    * [Mobile View]()
+* Home Page
+    * [Desktop View]()
+    * [Mobile View]()
+* Products Page
+    * [Desktop View]()
+    * [Mobile View]()
+* Individual Products Page
+    * [Desktop View]()
+    * [Mobile View]()
+* My Account Page
+    * [Desktop View]()
+    * [Mobile View]()
+* Login Page
+    * [Desktop View]()
+    * [Mobile View]()
+* My Basket Page
+    * [Desktop View]()
+    * [Mobile View]()
+* Checkout Page
+    * [Desktop View]()
+    * [Mobile View]()
+* Contact Page
+    * [Desktop View]()
+    * [Mobile View]()
+* Blog Home Page
+    * [Desktop View]()
+    * [Mobile View]()
+* Individual Blog Page
+    * [Desktop View]()
+    * [Mobile View]()
+</details>
 
 [Back to Top](#table-of-contents)
 
