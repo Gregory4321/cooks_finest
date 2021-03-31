@@ -109,38 +109,38 @@ Find the links to these wireframes below.
 <summary>Wireframes</summary>
 
 * Base Template
-    * [Desktop View]()
-    * [Mobile View]()
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/base-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-base-wire.png)
 * Home Page
-    * [Desktop View]()
-    * [Mobile View]()
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/home-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-home-wire.png)
 * Products Page
-    * [Desktop View]()
-    * [Mobile View]()
-* Individual Products Page
-    * [Desktop View]()
-    * [Mobile View]()
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/products-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-products-wire.png)
+* Individual Product Page
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/product-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-product-wire.png)
 * My Account Page
-    * [Desktop View]()
-    * [Mobile View]()
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/profile-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-profile-wire.png)
 * Login Page
-    * [Desktop View]()
-    * [Mobile View]()
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/login-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-login-wire.png)
+* Register Page
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/register-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-register-wire.png)
 * My Basket Page
-    * [Desktop View]()
-    * [Mobile View]()
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/basket-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-basket-wire.png)
 * Checkout Page
-    * [Desktop View]()
-    * [Mobile View]()
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/checkout-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-checkout-wire.png)
 * Contact Page
-    * [Desktop View]()
-    * [Mobile View]()
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/contact-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-contact-wire.png)
 * Blog Home Page
-    * [Desktop View]()
-    * [Mobile View]()
-* Individual Blog Page
-    * [Desktop View]()
-    * [Mobile View]()
+    * [Desktop View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/blog-wire.png)
+    * [Mobile View](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/mob-blog-wire.png)
 </details>
 
 [Back to Top](#table-of-contents)
