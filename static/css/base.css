@@ -3,10 +3,10 @@ html {
 }
 
 body {
-    background: url('/media/home-hero-image.jpg') no-repeat center center fixed;
+    background: url('/media/home-image1.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #fff;
+    color: #4d4949;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -31,4 +31,33 @@ body {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+.btn-black {
+    background: #000;
+    color: #fff;
+}
+
+/* --------------------- Media Queries */
+
+/* Container larger on xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* fixed top navbar only on medium and up  */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
 }
