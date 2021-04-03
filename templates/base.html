@@ -37,6 +37,7 @@
   <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <!-- Search bar -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="">
                     <div class="input-group w-100">
@@ -51,11 +52,13 @@
                     </div>
                 </form>
             </div>
+            <!-- Logo -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
                 <a href="{% url 'home' %}" class="nav-link">
                     <h2 class="logo-font text-black my-0">Cook's Finest</h2>
                 </a>
             </div>
+            <!-- Icons -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
@@ -94,6 +97,14 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-expand-lg main-navbar w-100">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/main-nav.html' %}
+            </nav>
         </div>
     </header>
 
