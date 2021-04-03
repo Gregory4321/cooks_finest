@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/home-image1.jpg') no-repeat center center fixed;
+    background: url('/media/hero-image.png') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #4d4949;
@@ -36,6 +36,13 @@ body {
 .btn-black {
     background: #000;
     color: #fff;
+}
+
+.jumbotron {
+    background-color: rgba(225, 173, 1, 0.8);
+    color: #000;
+    height: 400px;
+    width: 450px;
 }
 
 /* --------------------- Media Queries */
