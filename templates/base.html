@@ -63,12 +63,12 @@
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a href="" class="text-black nav-link" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
+                            <div class="text-center my-account-text">
                                 <div><i class="fas fa-user"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu my-account-dropdown" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a href="" class="dropdown-item">Product Management</a>
@@ -105,6 +105,11 @@
                 </button>
                 {% include 'includes/main-nav.html' %}
             </nav>
+        </div>
+        <div id="discount-banner" class="row text-center">
+            <div class="col text-black discount-banner-bg">
+                <h5 class="logo-font my-1">Get 15% off when you spend over £{{ discount_threshold }}</h5>
+            </div>
         </div>
     </header>
 

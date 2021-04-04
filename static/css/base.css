@@ -25,12 +25,16 @@ body {
     text-transform: uppercase;
 }
 
+.my-account-text:hover {
+    text-decoration: underline;
+}
+
 .text-black {
     color: #000 !important;
 }
 
-.text-white {
-    color: #fff !important;
+.white-text {
+    color: #fff;
 }
 
 .border-black {
@@ -42,6 +46,10 @@ body {
     color: #fff;
 }
 
+.btn-black:hover {
+    color: #E1AD01;
+}
+
 .jumbotron {
     background-color: rgba(225, 173, 1, 0.8);
     color: #000;
@@ -49,9 +57,33 @@ body {
     width: 450px;
 }
 
+#main-nav a:hover {
+    color: #E1AD01;
+}
+
 .main-navbar {
     background-color: #000;
     color: #fff;
+}
+
+.discount-banner-bg {
+    background-color: #E1AD01;
+}
+
+.main-nav-dropdown {
+    margin-top: 8px;
+    border-radius: 0;
+    border: none;
+}
+
+.my-account-dropdown {
+    margin-top: -1px;
+    border-radius: 0;
+    border: none;
+}
+
+.my-account-dropdown a:hover {
+    color: #E1AD01;
 }
 
 /* --------------------- Media Queries */
