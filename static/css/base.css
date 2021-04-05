@@ -6,7 +6,7 @@ body {
     background: url('/media/hero-image.png') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #4d4949;
+    color: #000;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -33,10 +33,6 @@ body {
     color: #000 !important;
 }
 
-.white-text {
-    color: #fff;
-}
-
 .border-black {
     border: 1px solid black !important;
 }
@@ -61,10 +57,14 @@ body {
     color: #E1AD01;
 }
 
-.main-navbar {
-    background-color: #000;
-    color: #fff;
+#main-nav a {
+    color: #000;
 }
+
+/* .main-navbar {
+    background-color: #fff;
+    color: #000;
+} */
 
 .discount-banner-bg {
     background-color: #E1AD01;
@@ -105,7 +105,22 @@ body {
         z-index: 1000;
     }
 
+    .main-navbar {
+        background-color: #000;
+        color: #fff;
+    }
+
+    #main-nav a {
+        color: #fff;
+    }
+
     .header-container {
         padding-top: 164px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-container {
+        padding-top: 112px;
     }
 }
