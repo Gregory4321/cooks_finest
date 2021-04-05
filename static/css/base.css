@@ -25,7 +25,7 @@ body {
     text-transform: uppercase;
 }
 
-.my-account-text:hover {
+.top-nav-icon:hover {
     text-decoration: underline;
 }
 
@@ -59,6 +59,10 @@ body {
 
 #main-nav a {
     color: #000;
+}
+
+#main-nav a.dropdown-item:hover {
+    color: #E1AD01;
 }
 
 /* .main-navbar {
@@ -112,6 +116,10 @@ body {
 
     #main-nav a {
         color: #fff;
+    }
+
+    #main-nav a.dropdown-item {
+        color: #000;
     }
 
     .header-container {
