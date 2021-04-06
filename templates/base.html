@@ -39,9 +39,9 @@
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <!-- Search bar -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="">
+                <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input type="text" class="form-control border border-black rounded-0" name="query" placeholder="Search">
+                        <input type="text" class="form-control border border-black rounded-0" name="q" placeholder="Search">
                         <div class="input-group-append">
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                                 <span class="icon">
