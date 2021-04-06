@@ -65,11 +65,6 @@ body {
     color: #E1AD01;
 }
 
-/* .main-navbar {
-    background-color: #fff;
-    color: #000;
-} */
-
 .discount-banner-bg {
     background-color: #E1AD01;
 }
@@ -84,6 +79,10 @@ body {
     margin-top: -1px;
     border-radius: 0;
     border: none;
+}
+
+.my-account-dropdown a {
+    color: #000;
 }
 
 .my-account-dropdown a:hover {
