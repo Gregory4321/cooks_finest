@@ -73,9 +73,13 @@ Reasearching for this project, I came across only a handful of sites that catere
 
 Sites I used for inspiration were:
 
+* [Robert Dyas](https://www.robertdyas.co.uk/)
 * [Lakeland](https://www.lakeland.co.uk/)
+* [Wayfair](https://www.wayfair.co.uk/)
 * [ProCook](https://www.procook.co.uk/)
 * [Sous Chef](https://www.souschef.co.uk/)
+* [Amazon](https://www.amazon.co.uk/)
+* [Dunelm](https://www.dunelm.com/)
 
 ### The Five Planes of UX
 
@@ -146,6 +150,15 @@ Find the links to these wireframes below.
 [Back to Top](#table-of-contents)
 
 ##### The Colour Scheme
+
+I wanted to use monochromatic styling for this site effectively, as the strong tonal variation provides a good contrast betweenthe areas of the page. I wanted a brighter colour to pop out from the black and white, to enhance areas of activity like call to actions buttons, the delivery banner and the back to top button. This colour scheme would prove useful as the content of the site was to potentially be bright and busy, so this monochromatic style helped to break up these areas.
+
+The colours I used are:
+
+![Colour scheme]()
+
+The primary colour.. 
+The secondary colour.. 
 
 ##### Font
 
