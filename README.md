@@ -162,7 +162,12 @@ The secondary colour..
 
 ##### Font
 
+I decided on two fonts for my site. I found them using [Google Fonts](https://fonts.google.com/), and refining the search criteria to sans serif fonts. I found the Quiksand font, which I thought would work well as the body font, as it was simple and easy to read. I used Google Fonts inbuilt tool to find popular pairings for the Quiksand font, and the Montserrat font was suggested. I found that this font was a perfect pairing for the body font I'd chosen, as it was very similar, yet stood out more as headings and titles and to the point.
+I included these fonts by inserting a link taken from google fonts into the head of my base.html.
+
 ##### The Logo
+
+For this project, I decided to keep the logo as a basic h2 heading, with different colours for the two words, to help make them stand out. I just wanted to keep this basic design and structure for this as I felt a fancy designed logo for this site wasn't neccassarily needed, and the h2 would help with the transitioning of different screen sizes.
 
 #### Conclusion
 
