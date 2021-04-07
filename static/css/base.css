@@ -101,7 +101,7 @@ body {
 
 a.category-badge > span.badge:hover {
     background: #000 !important;
-    color: #fff !important;
+    color: #E1AD01 !important;
 }
 
 /* --------------------- Media Queries */
