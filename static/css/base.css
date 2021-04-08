@@ -69,6 +69,10 @@ body {
     background-color: #E1AD01;
 }
 
+#discount-banner h5 {
+    letter-spacing: 1px;
+}
+
 .main-nav-dropdown {
     margin-top: 8px;
     border-radius: 0;
