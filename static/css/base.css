@@ -104,6 +104,33 @@ a.category-badge > span.badge:hover {
     color: #E1AD01 !important;
 }
 
+.btt-button {
+    display: none;
+    background-color: #E1AD01;
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.btt-button:hover {
+    background-color: #000;
+}
+
+.btt-button:hover .btt-icon {
+    color: #E1AD01;
+}
+
+.btt-link:hover {
+    text-decoration: none;
+}
+
+.btt-link {
+    cursor: pointer;
+    color: #000;
+}
+
 /* --------------------- Media Queries */
 
 /* Container larger on xl screens */
