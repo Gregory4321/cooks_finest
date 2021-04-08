@@ -44,6 +44,17 @@ body {
 
 .btn-black:hover {
     color: #E1AD01;
+    font-weight: bold;
+}
+
+.btn-outline-black {
+    border: 1px solid #000 !important;
+}
+
+.btn-outline-black:hover {
+    color: #000 !important;
+    background-color: #E1AD01 !important;
+    font-weight: bold;
 }
 
 .jumbotron {
@@ -133,15 +144,6 @@ a.category-badge > span.badge:hover {
 .btt-link {
     cursor: pointer;
     color: #000;
-}
-
-.btn-outline-black {
-    border-color: #000;
-}
-
-.btn-outline-black:hover {
-    color: #E1AD01;
-    background-color: #000;
 }
 
 /* --------------------- Media Queries */
