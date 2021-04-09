@@ -76,6 +76,14 @@ body {
     color: #E1AD01;
 }
 
+.basket-info {
+    color: #E1AD01 !important;
+}
+
+.basket-icon:hover {
+    color: #9c7e1a;
+}
+
 .discount-banner-bg {
     background-color: #E1AD01;
 }
