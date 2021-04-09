@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
+                <h2 class="text-uppercase">Products</h2>
                 {% for c in current_categories %}
                     <a href="{% url 'products' %}?category={{ c.name }}" class="text-decoration-none category-badge">
                         <span class="badge badge-white text-black border border-black rounded-0 p-2 mt-2">{{ c.friendly_name }}</span>

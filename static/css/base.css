@@ -21,10 +21,6 @@ body {
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
-}
-
 .top-nav-icon:hover {
     text-decoration: underline;
 }
