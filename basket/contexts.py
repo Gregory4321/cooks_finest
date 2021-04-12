@@ -38,9 +38,9 @@ def basket_contents(request):
         discount_delta = settings.DISCOUNT_THRESHOLD - total
     else:
         promotion = 0
-        discount_delta = settings.DISCOUNT_THRESHOLD
+        discount_delta = settings.DISCOUNT_THRESHOLD - total
 
-    grand_total = promotion + total
+    grand_total = total -  promotion
 
     context = {
         'basket_items': basket_items,
