@@ -156,6 +156,18 @@ a.category-badge > span.badge:hover {
     color: #aab7c4;
 }
 
+#accordion .btn-link {
+    color: #000;
+}
+
+/* #accordion .btn-link:hover i {
+    text-decoration: none;
+} */
+
+#accordion .card-header.active .caret-icon i {
+    transform: rotate(180deg);
+}
+
 .message-container {
     position: fixed;
     top: 72px;
