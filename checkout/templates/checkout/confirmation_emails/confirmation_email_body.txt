@@ -1,0 +1,32 @@
+Hello {{ order.full_name }}
+
+Thank you for shopping at Cook's Finest.
+This is a confirmation email of your recent order.
+
+Order Number: {{ order.order_number }}
+Date: {{ order.date }}
+
+Order Total: £{{ order.order_total }}
+Discount £{{ order.promotion_cost }}
+Grand Total: £{{ order.grand_total }}
+
+Order Details:
+
+{% for item in order.lineitems.all %}
+{{ item.product.name }}
+{% if item.product.has_sizes %} Size: {{ item.product_size|upper }}{% endif %}
+{{ item.quantity }} @ £{{ item.product.price }} each
+{% endfor %}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+We have on our system your phone number as {{ order.phone_number }}.
+
+If you have an questions or need to talk about your order please email us at {{ contact_email }}.
+
+Thank you for shopping with us. We hope you love our product(s)
+
+Take Care,
+
+Cook's Finest
+
