@@ -53,6 +53,10 @@ body {
     font-weight: bold;
 }
 
+.signed-in {
+    font-size: 14px;
+}
+
 .jumbotron {
     background-color: rgba(225, 173, 1, 0.8);
     color: #000;
