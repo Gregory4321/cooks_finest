@@ -189,7 +189,7 @@ a.category-badge > span.badge:hover {
 
 /* Convenience classes - colours copied from Bootstrap */
 .arrow-primary {
-    border-bottom-color: #007bff i !important;
+    border-bottom-color: #007bff !important;
 }
 
 .arrow-secondary {

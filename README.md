@@ -160,13 +160,13 @@ I wanted to use monochromatic styling for this site effectively, as the strong t
 
 The colours I used are:
 
-![Colour scheme]()
+![Colour scheme](media/readme_content/colours.png)
 
 The primary colour, Goldenrod(yellow), was used for areas I wanted to pop out to the user, such as the delivery banner, back to top button, and text colour on hover of particular elements, as well as buttons background colour when hovered over, across pages. Using the colour tool that appears when hovering over a colour set in the style.css page, I toned down this colour to obtain the colour used for the basket icon when it is already coloured Goldenrod when there are items in the basket, giving a clear contrast for the user that their cursor is over the basket icon.
 
 The secondary colour I chose was Black. This was to provide clear contrast when used alongside the backgound of the pages(White), and the primary colour(Goldenrod). The main nav was coloured black, with the top nav above being white, and the promotional banner below, yellow. Therefore, the text of the main nav is white, and changes to yellow when the user hoveres over it. The main buttons across the site were also coloured black, again with white text, and the yellow on hover. Text colour across the entire rest of the site is black so that it stands out against the white background. Exceptions to this include the placeholder text of the forms(#aab7c4), small sub headings, and the category and rating text of the products description (all coloured in Bootstraps text-muted class, #6c757d).
 
-I also used Bootstraps success, danger, warning and info colours as toast colour indicators, as well s the primary class for the edit link presented to the superuser.
+I also used Bootstraps success, danger, warning and info colours as toast colour indicators, as well as the primary class for the edit link presented to the superuser, with the delete link colour as danger.
 
 ##### Font
 
