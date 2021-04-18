@@ -162,8 +162,11 @@ The colours I used are:
 
 ![Colour scheme]()
 
-The primary colour..
-The secondary colour..
+The primary colour, Goldenrod(yellow), was used for areas I wanted to pop out to the user, such as the delivery banner, back to top button, and text colour on hover of particular elements, as well as buttons background colour when hovered over, across pages. Using the colour tool that appears when hovering over a colour set in the style.css page, I toned down this colour to obtain the colour used for the basket icon when it is already coloured Goldenrod when there are items in the basket, giving a clear contrast for the user that their cursor is over the basket icon.
+
+The secondary colour I chose was Black. This was to provide clear contrast when used alongside the backgound of the pages(White), and the primary colour(Goldenrod). The main nav was coloured black, with the top nav above being white, and the promotional banner below, yellow. Therefore, the text of the main nav is white, and changes to yellow when the user hoveres over it. The main buttons across the site were also coloured black, again with white text, and the yellow on hover. Text colour across the entire rest of the site is black so that it stands out against the white background. Exceptions to this include the placeholder text of the forms(#aab7c4), small sub headings, and the category and rating text of the products description (all coloured in Bootstraps text-muted class, #6c757d).
+
+I also used Bootstraps success, danger, warning and info colours as toast colour indicators, as well s the primary class for the edit link presented to the superuser.
 
 ##### Font
 
@@ -172,9 +175,11 @@ I included these fonts by inserting a link taken from google fonts into the head
 
 ##### The Logo
 
-For this project, I decided to keep the logo as a basic h2 heading, with different colours for the two words, to help make them stand out. I just wanted to keep this basic design and structure for this as I felt a fancy designed logo for this site wasn't neccassarily needed, and the h2 would help with the transitioning of different screen sizes.
+For this project, I decided to keep the logo as a basic h2 heading, in black font to keep a theme across the site. I wanted to use a basic design and structure for this as I felt a fancy designed logo for this site wasn't neccassarily needed, and the h2 would help with the transitioning of different screen sizes.
 
 #### Conclusion
+
+The final pages...
 
 [Back to Top](#table-of-contents)
 
