@@ -189,9 +189,80 @@ The final pages...
 
 ### Languages
 
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) - Language used to create the structure of the pages.
+
+* [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - Language used to add styling across all pages.
+
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Language used to create interactivity across the pages.
+
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Language used to create the back-end functionality of the app.
+
 ### Libraries, Frameworks and Editors
 
+* [Django](https://www.djangoproject.com/) -  a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+
+* [Bootstrap 5](https://getbootstrap.com/) - used as the base structure and layout of the site, using its grid system to aid responsiveness across screen sizes. Many components such as the navbar, footer and cards were used. Bootstraps inbuilt Javascript and jQuery was used for initialization of many components such as the dropdown elements and the navbar expand and collapse.
+
+* [jQuery](https://jquery.com/) - utilising it's extensive library to simplify and help writing Javascript code.
+
+* [Google Fonts](https://fonts.google.com/) - used to embed the 'Montserrat' and 'Quiksand' fonts used across the site.
+
+* [Font Awesome](https://fontawesome.com/) - used for their free range of icons.
+
+* [Favicon.io](https://favicon.io/) - was used to generate the favicon image.
+
+* [Gitpod](https://www.gitpod.io/) - used as preferred choice of IDE for writing my code. Halfway through this project gitpod upgraded their IDE to [Visual Studio Code](https://code.visualstudio.com/) which I then continued using as the main IDE to write my code.
+
+* [Git](https://git-scm.com/) - used for version control by making use of the Gitpod terminal to add, commit and push to Github.
+
+* [Github](https://github.com) - used to host the project's repository and store the code, and linked to Heroku to push latest changes to the deployed build version.
+
+* [Heroku](https://www.heroku.com/) - used as a hosting platform for deploying my live version of this CRUD application.
+
+* [Unsplash](https://unsplash.com/) - used to find images for use across the site.
+
+* [Google Images](https://google.com) - used to find images for use across the site.
+
+### Extensions and Packages
+
+* [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - used as an authentification system, utilising it's templates and logics.
+
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - used to format forms, automatically using Bootstrap styling.
+
+* [Pillow](https://pillow.readthedocs.io/en/stable/) - Python Imaging Library to help store imagery into a database.
+
+* [psycopg2](https://www.psycopg.org/docs/) - PostgreSQL database adapter for the Python.
+
+### Databases
+
+* [Sqlite 3](https://www.sqlite.org/index.html) - used as the database during development.
+
+* [PostgresSQL](https://www.postgresql.org/) - used as the database for deployment, enabling it as an add on through [Heroku](https://www.heroku.com/postgres).
+
 ### Tools
+
+* [Stripe](https://stripe.com/gb) - used as the payment infrastructure to take payments on the site.
+
+* [Google](https://www.google.co.uk/) - used for researching various techniques, styles and information.
+
+* [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - used for testing and debugging.
+
+* [Figma](https://www.figma.com/) - used for creating the wireframes in the design stage.
+
+* [Coolors](https://coolors.co/) - used to find and compare colours that complimented one another, retrieve names of colours, and showcase
+the colours on the README.md file as an image.
+
+* [Canva](https://www.canva.com/) - used to design and create the logo and favicon logo.
+
+* [Picresize](https://picresize.com/) - used to resize and crop images for better implementation, such as 25% or 50% smaller.
+
+* [Am I Responsive](http://ami.responsivedesign.is/) - used for showing the responsiveness of the site across different screen sizes and providing the image at the top of this document.
+
+* [Free Online HTML Formatter](https://www.freeformatter.com/html-formatter.html#ad-output) - used to format the HTML code in a neater and more organised fashion.
+
+* [Free Online CSS Formatter](https://www.freeformatter.com/css-beautifier.html) - used to format the CSS code in a neater and more organised fashion.
+
+* [Free Online JS Formatter](https://www.freeformatter.com/javascript-beautifier.html) - used to format the JavaScript code in a neater and more organised fashion.
 
 [Back to Top](#table-of-contents)
 
