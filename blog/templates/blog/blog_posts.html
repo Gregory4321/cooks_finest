@@ -10,10 +10,42 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="overlay"></div>
+    <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                {{ blogs }}
+            <div class="col text-center mt-3">
+                <h2 class="text-uppercase">Blogs</h2>
+                <hr class="w-50">
+            </div>
+        </div>
+        <div class="row">
+            <div class="blog-container col-10 offset-1">
+                {% for blog in blogs %}
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-lg-4">
+                            {% if blog.image %}
+                            <a href="{{ blog.image.url }}" target="_blank">
+                                <img src="{{ blog.image.url }}" alt="{{ blog.name }}" class="card-img">
+                            </a>
+                            {% else %}
+                                <a href="">
+                                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.name }}" class="img-fluid">
+                                </a>
+                            {% endif %}
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div class="card-body">
+                                <a href="" class="text-black"><h5 class="card-title">{{ blog.title }}</h5></a>
+                                <p class="card-text">{{ blog.body|slice:':150' }} ...</p>
+                                <p class="card-text text-muted"><small>{{ blog.author }} | {{ blog.created_on}}</small></p>
+                                <a href="" class="btn btn-black btn-sm text-uppercase">Read More</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>    
+                {% endfor %}
             </div>
         </div>
     </div>
