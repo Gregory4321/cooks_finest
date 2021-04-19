@@ -377,7 +377,7 @@ The structure of the Product and Checkout apps are guided by the Code Institute'
 | User Profile | user_profile   | models.ForeignKey    | UserProfile, on_delete=models.SET_NULL, null=True, blank=True,related_name='user_review' |
 | Date Created | created_on     | models.DateTimeField | auto_now_add=True                                                    |
 | Title        | review_title   | models.CharField     | max_length=254                                                       |
-| Content      | review_content |  models.TextField    | max_length=1000, null=Flase, blank=False, default=''                 |
+| Content      | review_content |  models.TextField    | max_length=1000, null=False, blank=False, default=''                 |
 
 ***
 
