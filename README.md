@@ -270,6 +270,115 @@ the colours on the README.md file as an image.
 
 ## **Database Structure**
 
+During the development of this Django project, I worked with the SQLite3 database, which is the default database used by Django. For deployment of this project, I changed to a PostgreSQL database, that is provided by Heroku as an add-on.
+
+Using Django Allauth and it's default `django.contrib.auth.models`, provided me with the the **User model** used in the profile app.
+
+The structure of the Product and Checkout apps are guided by the Code Institute's walkthrough project, **Boutique Ado**.
+
+### Data Models
+
+#### Profile app
+
+##### UserProfile model
+
+| Name             | Database Key         | Field Type           | Validation                                          |
+| ---------------- | -------------------- | -------------------- | --------------------------------------------------- |
+| User             | user                 | OneToOneField 'User' | on_delete=models.CASCADE                            |
+| Full Name        | default_full_name    | models.CharField     | max_length=50, null=True, blank=True                |
+| Phone Number     | default_phone_number | models.CharField     | max_length=20, null=True, blank=True                |
+| Street Address 1 | street_address1      | models.CharField     | max_length=80, null=True, blank=True                |
+| Street Address 2 | street_address2      | models.CharField     | max_length=80, null=True, blank=True                |
+| Town or City     | default_town_or_city | models.CharField     | max_length=40, null=True, blank=True                |
+| County           | default_county       | models.CharField     | max_length=80, null=True, blank=True                |
+| Postcode         | default_postcode     | models.CharField     | max_length=20, null=True, blank=True                |
+| Country          | default_country      | models.CharField     | blank_label='Select Country', null=True, blank=True |
+
+#### Products app
+
+##### Category model
+
+| Name             | Database Key         | Field Type           | Validation                                          |
+| ---------------- | -------------------- | -------------------- | --------------------------------------------------- |
+| Name             | name                 | CharField            | max_length=254                                      |
+| Friendly Name    | friendly_name        | CharField            | max_length=254, null=True, blank=True               |
+
+##### Product model
+
+| Name             | Database Key         | Field Type           | Validation                                                   |
+| ---------------- | -------------------- | -------------------- | ------------------------------------------------------------ |
+| Category         | category             | models.ForeignKey    | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
+| Sku              | sku                  | models.CharField     | max_length=254, null=True, blank=True                        |
+| Name             | name                 | models.CharField     | max_length=254                                               |
+| Price            | price                | models.DecimalField  | max_digits=6, decimal_places=2                               |
+| Sizes            | has_sizes            | models.BooleanField  | default=False, null=True, blank=True                         |
+| Description      | description          | models.TextField     |                                                              |
+| Rating           | rating               | models.DecimalField  | max_digits=6, decimal_places=2, null=True, blank=True        |
+| Image            | image                | models.ImageField    | null=True, blank=True                                        |
+| Image URL        | image_url            | models.URLField      | max_length=1024, null=True, blank=True                       |
+
+#### Checkout app
+
+##### Order model
+
+| Name                     | Database Key         | Field Type           | Validation                                                   |
+| ----------------         | -------------------- | -------------------- | ------------------------------------------------------------ |
+| Order Number             | order_number         | models.CharField     | max_length=32, null=False, editable=False                    |
+| User Profile             | user_profile         | models.ForeignKey    | UserProfile, on_delete=models.SET_NULL, null=True, blank=True,related_name='orders' |
+| Full Name                | full_name            | models.CharField     | max_length=50, null=False, blank=False                       |
+| Email                    | email                | models.EmailField    | max_length=254, null=False, blank=False                      |
+| Phone Number             | phone_number         | models.CharField     | max_length=20, null=False, blank=False                       |
+| Country                  | country              | CountryField         | blank_label='Select Country *', null=False, blank=False      |
+| Postcode                 | postcode             | models.CharField     | max_length=20, null=True, blank=True                         |
+| Town or City             | town_or_city         | models.CharField     | max_length=40, null=False, blank=False                       |
+| Street Address 1         | street_address1      | models.CharField     | max_length=80, null=False, blank=False                       |
+| Street Address 2         | street_address2      | models.CharField     | max_length=80, null=False, blank=False                       |
+| County                   | county               | models.CharField     | max_length=80, null=True, blank=True                         |
+| Date                     | date                 | models.DateTimeField | auto_now_add=True                                            |
+| Promotion Cost           | promotion_cost       | models.DecimalField  | max_digits=6, decimal_places=2, null=False, default=0        |
+| Order Total              | order_total          | models.DecimalField  | max_digits=10, decimal_places=2, null=False, default=0       |
+| Grand Total              | grand_total          | models.DecimalField  | max_digits=10, decimal_places=2, null=False, default=0       |
+| Original Basket          | original_basket      | models.TextField     | null=False, blank=False, default=''                          |
+| Stripe Payment Intent ID | stripe_pid           | models.CharField     | max_length=254, null=False, blank=False, default=''          |
+
+##### Order Line Item model
+
+| Name                     | Database Key         | Field Type           | Validation                                                   |
+| ----------------         | -------------------- | -------------------- | ------------------------------------------------------------ |
+| Order                    | order                | models.ForeignKey    | Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems' |
+| Product                  | product              | models.ForeignKey    | Product, null=False, blank=False, on_delete=models.CASCADE   |
+| Product Size             | product_size         | models.CharField     | max_length=2, null=True, blank=True                          |
+| Quantity                 | quantity             | models.IntegerField  | null=False, blank=False, default=0                           |
+| Line Item Total          | lineitem_total       | models.DecimalField  | max_digits=6, decimal_places=2, null=False, blank=False, editable=False |
+
+#### Blog app
+
+##### BlogPost model
+
+| Name         | Database Key | Field Type           | Validation                                                 |
+| ------------ | ------------ | -------------------- | ---------------------------------------------------------- |
+| Title        | title        | models.CharField     | max_length=254, unique=True                                |
+| Date Created | created_on   | models.DateTimeField | auto_now_add=True                                          |
+| Date Updated | updated_on   | models.DateTimeField | auto_now= True                                             |
+| Slug         | slug         | models.SlugField     | max_length=254, unique=True                                |
+| Author       | author       | models.ForeignKey    | User, on_delete= models.CASCADE, related_name='blog_posts' |
+| Body         | body         | models.TextField     |                                                            |
+| Image        | image        | models.ImageField    | null=True, blank=True                                      |
+| Image URL    | image_url    | models.URLField      | max_length=1024, null=True, blank=True                     |
+| Status       | status       | models.IntegerField  | choices=STATUS, default=0                                  |
+
+#### Reiviews app
+
+##### Product Review
+
+| Name         | Database Key   | Field Type           | Validation                                                           |
+| ------------ | -------------- | -------------------- | -------------------------------------------------------------------- |
+| Product Name | product        | models.ForeignKey    | 'products.Product', null=True, blank=True, on_delete=models.SET_NULL |
+| User Profile | user_profile   | models.ForeignKey    | UserProfile, on_delete=models.SET_NULL, null=True, blank=True,related_name='user_review' |
+| Date Created | created_on     | models.DateTimeField | auto_now_add=True                                                    |
+| Title        | review_title   | models.CharField     | max_length=254                                                       |
+| Content      | review_content |  models.TextField    | max_length=1000, null=Flase, blank=False, default=''                 |
+
 ***
 
 ## **Features**
