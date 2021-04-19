@@ -11,7 +11,7 @@ class ProductAdmin(admin.ModelAdmin):
         'category',
         'image',
     )
-
+    search_fields = ['name', 'category', 'sku']
     ordering = ('sku',)
 
 
@@ -20,6 +20,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
     )
+    search_fields = ['name', 'friendly_name']
 
 
 admin.site.register(Product, ProductAdmin)
