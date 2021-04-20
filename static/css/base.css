@@ -24,6 +24,10 @@ body {
     opacity: 0.6;
 }
 
+.new-arrivals-section {
+    background-color: #fff;
+}
+
 /* from Bulma */
 /* Centered and consistent size for FontAwesome */
 

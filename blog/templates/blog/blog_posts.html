@@ -25,22 +25,22 @@
                     <div class="row g-0">
                         <div class="col-lg-4">
                             {% if blog.image %}
-                            <a href="" target="_blank">
-                                <img src="{{ blog.image.url }}" alt="{{ blog.name }}" class="card-img">
+                            <a href="{% url 'blog_detail' blog.slug %}" target="_blank">
+                                <img src="{{ blog.image.url }}" alt="{{ blog.name }}" class="card-img blog-detail-img">
                             </a>
                             {% else %}
-                                <a href="">
-                                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.name }}" class="img-fluid">
+                                <a href="{% url 'blog_detail' blog.slug %}" target="_blank">
+                                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.name }}" class="img-fluid blog-detail-img">
                                 </a>
                             {% endif %}
                         </div>
 
                         <div class="col-lg-8">
                             <div class="card-body">
-                                <a href="" target="_blank" class="text-black"><h5 class="card-title">{{ blog.title }}</h5></a>
+                                <a href="{% url 'blog_detail' blog.slug %}" target="_blank" class="text-black"><h5 class="card-title">{{ blog.title }}</h5></a>
                                 <p class="card-text mb-1">{{ blog.body|slice:':150' }} ...</p>
                                 <p class="card-text text-muted"><small>{{ blog.author }} | {{ blog.created_on}}</small></p>
-                                <a href="" target="_blank" class="btn btn-black btn-sm text-uppercase">Read More</a>
+                                <a href="{% url 'blog_detail' blog.slug %}" target="_blank" class="btn btn-black btn-sm text-uppercase">Read More</a>
                             </div>
                         </div>
                         </div>

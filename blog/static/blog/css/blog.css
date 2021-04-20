@@ -5,3 +5,31 @@
 .body-text {
     margin-bottom: 0.5rem;
 }
+
+.blog-image-container {
+    width: 75%;
+    margin-top: 3rem;
+}
+
+@media (max-width:768px) {
+    .blog-image-container {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width:411px) {
+    .blog-details-title {
+        font-size: 28px;
+    }
+
+    .blog-image-container {
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width:320px) {
+    .blog-details-title {
+        font-size: 24px;
+    }
+}

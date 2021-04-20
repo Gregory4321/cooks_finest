@@ -29,30 +29,45 @@
 
     <section class="home-body-section">
         <div class="home-body">
-        <div class="row">
-            <div class="col-12 col-md-6 cards">
-                <div class="card bg-dark text-white text-center">
-                    <img src="/media/blog-image.jpg" class="card-img custom-card-img" alt="...">
-                    <div class="card-img-overlay text-center d-flex">
-                        <div class="align-self-center mx-auto">
-                      <h5 class="card-title">Check out our blog page</h5>
-                      <a href="{% url 'blogs' %}" class="btn btn-black btn-sm text-uppercase py-1">Go There</a>
+            <div class="row">
+                <div class="col-12 col-md-6 cards">
+                    <div class="card bg-dark text-white text-center">
+                        <img src="/media/blog-image.jpg" class="card-img custom-card-img" alt="...">
+                        <div class="card-img-overlay text-center d-flex">
+                            <div class="align-self-center mx-auto">
+                                <h5 class="card-title">Check out our blog page</h5>
+                                <a href="{% url 'blogs' %}" class="btn btn-black btn-sm text-uppercase py-1">Go There</a>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="col-12 col-md-6 cards">
+                    <div class="card bg-dark text-white">
+                        <img src="/media/special-image.jpeg" class="card-img custom-card-img" alt="...">
+                        <div class="card-img-overlay text-center d-flex">
+                            <div class="align-self-center mx-auto">
+                                <h5 class="card-title">Take a look at our special offers</h5>
+                                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance"
+                                    class="btn btn-black btn-sm text-uppercase py-1">Shop Now</a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-6 cards">
-                <div class="card bg-dark text-white">
-                    <img src="/media/special-image.jpeg" class="card-img custom-card-img" alt="...">
-                    <div class="card-img-overlay text-center d-flex">
-                        <div class="align-self-center mx-auto">
-                      <h5 class="card-title">Take a look at our special offers</h5>
-                      <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black btn-sm text-uppercase py-1">Shop Now</a>
-                    </div>
-                    </div>
-                  </div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <section>
+        <div class="best-arrivals-section container-fluid">
+            <div class="row">
+                <div class="col text-center mt-3">
+                    <h2 class="text-uppercase">New Arrivals</h2>
+                    <hr class="w-50">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+            </div>
         </div>
     </section>
 {% endblock %}
