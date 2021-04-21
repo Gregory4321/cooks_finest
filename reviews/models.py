@@ -12,6 +12,15 @@ class Review(models.Model):
         blank=True,
         related_name='user_review')
     created_on = models.DateTimeField(auto_now_add=True)
+    RATING_FIGURES = (
+        ("1", '1'),
+        ("2", '2'),
+        ("3", '3'),
+        ("4", '4'),
+        ("5", '5'),
+    )
+    review_rating = models.CharField(
+        max_length=10, choices=RATING_FIGURES, default="3")
     review_title = models.CharField(max_length=254)
     review_content = models.TextField(
         max_length=1000, null=False, blank=False, default='')
