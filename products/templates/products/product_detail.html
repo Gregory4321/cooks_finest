@@ -104,6 +104,24 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col text-center">
+                <p>
+                    <a class="btn btn-black" data-toggle="collapse" href="#collapseReview" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="text-uppercase">Read Reviews</span>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseReview">
+                    {% for rev in review %}
+                    <div class="card card-body review-card">
+                        <h5 class="card-title">{{ rev.review_title }}</h5>
+                        <p><small class="text-muted">{{ rev.review_rating }} / 5 <i class="fas fa-star"></i></small></p>
+                        <p class="card-text">{{ rev.review_content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 

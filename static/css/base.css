@@ -244,6 +244,11 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
+.review-card {
+    margin: 2rem auto;
+    width: 75%;
+}
+
 /* --------------------- Media Queries */
 
 /* Container larger on xl screens */
@@ -405,6 +410,10 @@ a.category-badge > span.badge:hover {
 @media (max-width: 768px) {
     .cards {
         padding: 10px;
+    }
+
+    .review-card {
+        width: 100%;
     }
 }
 
