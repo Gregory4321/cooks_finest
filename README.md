@@ -379,11 +379,52 @@ The structure of the Product and Checkout apps are guided by the Code Institute'
 | Title        | review_title   | models.CharField     | max_length=254                                                       |
 | Content      | review_content |  models.TextField    | max_length=1000, null=False, blank=False, default=''                 |
 
+[Back to Top](#table-of-contents)
+
 ***
 
 ## **Features**
 
 ### Existing Features
+
+Navigation Bar:
+All pages consist of a fixed nav bar visible at all times. It features a search box on the left to search keywords of a products name and description, and the sites logo in the middle. To the right two icons, one to represent a dropdown menu for 'my account', and a basket total which is a clickable link to the basket page. The 'my account' dropdown reveals different options depending who the user is. If a user is not signed in, 'login' and 'register' links are offered. Once a user is signed in, a link to 'my profile' and 'logout' is offered, as well as a box telling the user who is signed in. If the user is a superuser, they will also see a 'product management' link to take them to the corresponding page. Below this 'top nav', is the main navigation of the site. Here the user can click on links opening a dropdown menu, reealing more links to specific areas and categories of the site. The entire nav is fully responsive, with the logo being removed on tablet screen sizes and below, and the main nav moving to a collapsible hamburger menu on the left. The search bar is still present, but is revealed upon clicking a search icon, to keep the site on smaller screens feeling too busy.
+
+Footer:
+As with the navigation bar, all pages consist of a page footer. Here the user can click social media icons foind in the center of the footer, taking them to the corresponding social media pages. To the left of these icons a disclaimer is displayed that the site is for educational purposes, and to the right a clickable link taking the user to the contact page.
+
+Landing Page:
+A hero image showcases the type of products a user will find on the site. A jumbotron houses a call to action button to encourage the user to shop now, directing them to the all products page. Upon scrolling below the hero image, two cards with image backgrounds and overlaying text offer call to action buttons to the blog and special offers pages. Below this, 6 cards offer an insight of new arrivals to the site, presented as clickable card links to the products.
+
+Products Pages:
+Products can be viewed in various different ways, either as all products of the entire site, all products of a chosen category, or products of a specific sub category. Each of these pages follow the same layout and design to maintain consistency. Products are presented fully responsive cards, using Bootstraps grid system, containing the products image, as a link to the product, the products title and price, the category and rating. The category is presented as a clickable badge, taking the user to said category page. A dropdown menu is offered at the top right of the page above the products, to sort the products in different ways. : 'Price (low to high)/(high to low)', 'Name (A-Z)/(Z-A)' and 'Rating (low to high)/(high to low)' and 'Category (A-Z)/(Z-A)'. If the user is a superuser, then edit/delete buttons are offered in each product card for ease of management.
+
+Product Details Page:
+Individual products are viewed on this page, with the image to the left, and details to the right. The details are presented the saem as the products card on the products pages, along with the products description. A quantity selector box is given on this page for the user to input manually or use selector buttons (+/-) to increase/decrease the quantity of the respective product. There are two buttons below this for the user to go back to the all products page to 'Continue Shopping', or 'Add to Basket' to add the product to the user's basket.The edit/delete buttons are presented here also to only a superuser. If any products on the enitre site contain a size, then a dropdown above the quantity selector box is presented for the user to select as size. 'M' for medium is selected by default.
+
+Profile Page:
+This page is accessed through the dropdown of the 'My Account' link from the navbar. HEre a user is presented with a simple accordion. The first dropdown of the accordion will be open by default, and holds a form of the users default delivery information, which will be empty for the first time, and then updated whenever an order is placed and details are entered into the checkout form. The user can also update their details here by filling in the ofrm and clicking the 'Update Information' button belwo the form. The second dropdown holds the users order history. This is presented as a simple table, showing the order number, date, items and order total. The order number is given as the forst 5 digits of the unoquie number, and can be hovered over to reveal the entire number, and clicked to take the user to that orders confirmation page.
+
+Basket Page:
+This page lists to the user everything they have added to their basket. Basic product information is shown, along with a quantity selector box for the user to ammend their order. There is an update button to update the given quantity, and a remove button to completely remove the product fromt their basket. The basket total is given at the bottom right of the page, followed by the total discount if applicable, and then the grand total. If the user has not hit the discount threshold, text is shown informing how much more the user needs to spend to get the discount. If that threshold is hit, then the logic is executed to deduct the discount from the basket total, ammending the grand total to match. There are two buttons below this, one to 'Continue Shopping' taking the user back to all products, and the other the procedd to the checkout page.
+
+Checkout Page:
+The checkout page is split into two columns.To the right is a brief order summary, giving the user a final opportunity to check thier basket. On the left, a form to enter personal and delivery information. If the user is a new user, then the form will be empty. If the user has palced an order previously, or entered their information on the profile page, then the form will be pre filled with what was entered last time. Below the form, a checkbox offers the user to save the (if any) input information to their profile, and if not logged in then links to create an account or login are presented. An input box is then found to input the users payment method. Finally, there are again two buttons, one to go back to adjust user's basket, and one to complete their order. Upon clicking 'Complete Order', a yellow overlay takes the screen with a spinning gif indicating the order is being placed.
+
+Checkout Success Page:
+This page is accessed once a user completes an order. but can also be accessed through the profile page by clicking on the order umber from their 'Order History'. Here, the user will have a summary of their order, a confiramtion message of the successfully placement of the order, and a button to check out the lastest deals, to encourage further shopping. If accessing this page through their order history, a user will be notifued that they are viewing a past confirmation.
+
+Blog Page:
+The user can access this page by clicking on the card from the home page. All users have access to view thedse blogs, enhancing user interactivity with the site. The page kept a simple view to keep interaction for the user easy. Individual blogs will be presented as cards, with the image to the left, and then the title, a glimpse of the blogs body content limitied to 150 characters, and created by and on details. Below this a button to open the respective blog. The cards on this page are fully responive to the diferent screen sizes, moving the image to above the text on tablet screen sizes and less. If the user is a super user, then an add blog button will be present above the cards to the right.
+
+Blog Details Page:
+The individual blog pages have been kept simple, and fully responsive on different screen sizes. When opened from the blog page, they are opened in a seperate window to keep a good flow to the site, in case a user wanted to open multiple blogs. This page presents the blogs image, if any, then the title, created by and on details, and the blogs content. If the user is the supersuser, then links to edit/delete will be visible below the created by and on details.
+
+Review Views:
+ENTER HERE WHEN CREATED
+
+Back to top button:
+A back to top button becomes visble across all pages when a user scrolls past 200 pixels. The colour changes to the yellow from the colour scheme when hovered over, and when click, scrolls at a set speed back to the top of the page.
 
 ### Future Features
 
