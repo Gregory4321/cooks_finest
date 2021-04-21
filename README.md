@@ -426,6 +426,12 @@ ENTER HERE WHEN CREATED
 Back to top button:
 A back to top button becomes visble across all pages when a user scrolls past 200 pixels. The colour changes to the yellow from the colour scheme when hovered over, and when click, scrolls at a set speed back to the top of the page.
 
+Toasts:
+All pages have the ability to display toast messages to the user., which are displayed below the navbar on the right hand side. There are four different types of toast messages: success, error, warning and info. The toast colours will change to reflect each type of message. When a user adds a product to their basket, the success toast is rendered, displaying the contents of their basket, and the total excluding the discount. At the bottom of the toast a button is given for the user to go to secure checkout and open their basket page to review their order.
+
+Product Management Page:
+This page is only visible to a superuser. It can be accessed by logging in, and finding the link in the dropdown of the 'my account' link of the navbar. The purpose of this page is for the store owner(superuser) to add a product to the site. The page loads a form with all fields of a product, having the required fields marked by a *. There is a 'Select Image' button to upload an image from the superusers computer, where upon choosing an image, the image chosen name displayed below the button. Below the form, is a canel btton to cancel the process, and a button for added the product to the site. if the form is not valid, the the from will not be submitted and the user will be notified of which fields to fill in.
+
 ### Future Features
 
 ***
