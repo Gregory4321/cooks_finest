@@ -4,7 +4,7 @@ from profiles.models import UserProfile
 
 class Review(models.Model):
     product = models.ForeignKey(
-        'products.Product', null=True, blank=True, on_delete=models.SET_NULL)
+        'products.Product', null=True, blank=True, on_delete=models.SET_NULL, related_name='reviews')
     user_profile = models.ForeignKey(
         UserProfile,
         on_delete=models.SET_NULL,

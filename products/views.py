@@ -67,11 +67,9 @@ def product_detail(request, product_id):
     """
 
     product = get_object_or_404(Product, pk=product_id)
-    review = Review.objects.filter(product=product_id)
 
     context = {
         'product': product,
-        'review': review
     }
 
     return render(request, 'products/product_detail.html', context)
