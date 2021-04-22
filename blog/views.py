@@ -54,3 +54,31 @@ def add_blog(request):
     }
 
     return render(request, template, context)
+
+
+def edit_blog(request, slug):
+    """
+    Edit a blog on the blog page
+    """
+    blog = get_object_or_404(BlogPost, slug=slug)
+
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES, instance=blog)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated blog')
+            return redirect(reverse('blog_detail', args=[blog.slug]))
+        else:
+            messages.error(request, 'Failed to add blog. \
+                Please check the form is valid and try again.')
+    else:
+        form = BlogForm(instance=blog)
+        messages.info(request, f'You are editing "{blog.title}" .')
+
+    template = 'blog/edit_blog.html'
+    context = {
+        'form': form,
+        'blog': blog,
+    }
+
+    return render(request, template, context)
