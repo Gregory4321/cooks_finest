@@ -13,10 +13,12 @@ class BlogPost(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=254, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='blog_posts')
+        User,
+        on_delete=models.CASCADE,
+        related_name='blog_posts')
     body = models.TextField()
-    image = models.ImageField(null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image = models.ImageField(default='', blank=True)
+    image_url = models.URLField(max_length=1024, default='', blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:

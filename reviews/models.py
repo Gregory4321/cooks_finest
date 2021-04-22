@@ -4,7 +4,11 @@ from profiles.models import UserProfile
 
 class Review(models.Model):
     product = models.ForeignKey(
-        'products.Product', null=True, blank=True, on_delete=models.SET_NULL, related_name='reviews')
+        'products.Product',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='reviews')
     user_profile = models.ForeignKey(
         UserProfile,
         on_delete=models.SET_NULL,
@@ -30,3 +34,7 @@ class Review(models.Model):
 
     def __str__(self):
         return self.review_title
+
+    def save(self, *args, **kwargs):
+        self.product.calculate_rating()
+        super().save(*args, **kwargs)
