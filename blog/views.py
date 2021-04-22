@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from .models import BlogPost
 from .forms import BlogForm
 
@@ -34,8 +35,19 @@ def add_blog(request):
     """
     Add a blog to the blog page
     """
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_blog = form.save()
+            messages.success(request, 'Successfully added blog.')
+            return redirect(reverse('blog_detail', args=[new_blog.slug]))
+        else:
+            messages.error(
+                request, 'Failed to add blog. \
+                    Please check the form is valid and try again.')
+    else:
+        form = BlogForm()
 
-    form = BlogForm()
     template = 'blog/add_blog.html'
     context = {
         'form': form,
