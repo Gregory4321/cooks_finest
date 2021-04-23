@@ -349,6 +349,16 @@ a.category-badge > span.badge:hover {
     border-radius: 0;
 }
 
+.checkout-btn {
+    margin-top: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .checkout-btn {
+        margin-top: 0.5rem;
+    }
+}
+
 /* fixed top navbar only on medium and up  */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -380,6 +390,10 @@ a.category-badge > span.badge:hover {
 @media (max-width: 992px) {
     .header-container {
         padding-top: 112px;
+    }
+
+    .checkout-btn {
+        margin-top: 0.5rem;
     }
 }
 
@@ -414,6 +428,16 @@ a.category-badge > span.badge:hover {
 
     .review-card {
         width: 100%;
+    }
+}
+
+@media (max-width: 487px) {
+    .checkout-btn {
+        margin-top: 0.5rem;
+    }
+
+    .summary-text {
+        margin-top: 0.5rem;
     }
 }
 
