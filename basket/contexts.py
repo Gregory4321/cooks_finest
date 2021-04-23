@@ -33,14 +33,16 @@ def basket_contents(request):
                     'size': size,
                 })
 
+    # Discount logic
     if total > settings.DISCOUNT_THRESHOLD:
-        promotion = total * Decimal(settings.STANDARD_PROMOTION_PERCENTAGE / 100)
+        promotion = (
+            total * Decimal(settings.STANDARD_PROMOTION_PERCENTAGE / 100))
         discount_delta = settings.DISCOUNT_THRESHOLD - total
     else:
         promotion = 0
         discount_delta = settings.DISCOUNT_THRESHOLD - total
 
-    grand_total = total -  promotion
+    grand_total = total - promotion
 
     context = {
         'basket_items': basket_items,
