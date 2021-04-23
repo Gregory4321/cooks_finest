@@ -10,6 +10,27 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+/* from Bulma */
+/* Centered and consistent size for FontAwesome */
+
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Home/Landing Page */
+
 .home-body-section {
     background-color: #fff;
     padding: 50px;
@@ -28,58 +49,17 @@ body {
     background-color: #fff;
 }
 
-/* from Bulma */
-/* Centered and consistent size for FontAwesome */
-
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-.top-nav-icon:hover {
-    text-decoration: underline;
-}
-
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
-}
-
-.btn-black {
-    background: #000;
-    color: #fff;
-}
-
-.btn-black:hover {
-    color: #E1AD01;
-    font-weight: bold;
-}
-
-.btn-outline-black {
-    border: 1px solid #000 !important;
-}
-
-.btn-outline-black:hover {
-    color: #000 !important;
-    background-color: #E1AD01 !important;
-    font-weight: bold;
-}
-
-.signed-in {
-    font-size: 14px;
-}
-
 .jumbotron {
     background-color: rgba(225, 173, 1, 0.8);
     color: #000;
     height: 400px;
     width: 450px;
+}
+
+/* Navbar */
+
+.top-nav-icon:hover {
+    text-decoration: underline;
 }
 
 #main-nav a:hover {
@@ -130,6 +110,32 @@ body {
     color: #E1AD01;
 }
 
+/* Buttons */
+
+.btn-black {
+    background: #000;
+    color: #fff;
+}
+
+.btn-black:hover {
+    color: #E1AD01;
+    font-weight: bold;
+}
+
+.btn-outline-black {
+    border: 1px solid #000 !important;
+}
+
+.btn-outline-black:hover {
+    color: #000 !important;
+    background-color: #E1AD01 !important;
+    font-weight: bold;
+}
+
+.signed-in {
+    font-size: 14px;
+}
+
 .overlay {
     height: 100%;
     width: 100%;
@@ -144,6 +150,8 @@ a.category-badge > span.badge:hover {
     background: #000 !important;
     color: #E1AD01 !important;
 }
+
+/* Back to top button */
 
 .btt-button {
     display: none;
@@ -174,9 +182,13 @@ a.category-badge > span.badge:hover {
     color: #000;
 }
 
+/* Forms */
+
 .input[name='q']::placeholder {
     color: #aab7c4;
 }
+
+/* Toasts */
 
 .message-container {
     position: fixed;
@@ -243,6 +255,8 @@ a.category-badge > span.badge:hover {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+/* Product Detail Page */
 
 .review-card {
     margin: 2rem auto;
