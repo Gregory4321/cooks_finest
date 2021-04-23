@@ -82,3 +82,13 @@ def edit_blog(request, slug):
     }
 
     return render(request, template, context)
+
+
+def delete_blog(request, slug):
+    """
+    Delete a blog on from the blog page
+    """
+    blog = get_object_or_404(BlogPost, slug=slug)
+    blog.delete()
+    messages.success(request, f'Successfully deleted "{blog.title}".')
+    return redirect(reverse('blogs'))
