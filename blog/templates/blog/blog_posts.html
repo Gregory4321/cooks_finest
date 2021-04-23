@@ -14,6 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
+                <!-- Page Heading -->
                 <h2 class="text-uppercase">Blogs</h2>
                 <hr class="w-50">
             </div>
@@ -21,9 +22,11 @@
         <div class="row">
             <div class="blog-container col-10 offset-1">
                 {% for blog in blogs %}
+                <!-- Blog Card -->
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-lg-4">
+                            <!-- Blog Image -->
                             {% if blog.image %}
                             <a href="{% url 'blog_detail' blog.slug %}" target="_blank">
                                 <img src="{{ blog.image.url }}" alt="{{ blog.name }}" class="card-img blog-detail-img">
@@ -34,11 +37,12 @@
                                 </a>
                             {% endif %}
                         </div>
-
+                        <!-- Card Body -->
                         <div class="col-lg-8">
                             <div class="card-body">
                                 <a href="{% url 'blog_detail' blog.slug %}" target="_blank" class="text-black"><h5 class="card-title mb-1">{{ blog.title }}</h5></a>
                                 <small class="card-text text-muted">{{ blog.author }} | {{ blog.created_on}}</small>
+                                <!-- Superuser edit/delete buttons -->
                                 {% if request.user.is_superuser %}
                                 <small class="ml-2">
                                     <a href="{% url 'edit_blog' blog.slug %}">Edit</a> |

@@ -1,6 +1,6 @@
-from django.shortcuts import (
-    render, redirect, reverse, HttpResponse, get_object_or_404
-)
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
+from django.http import HttpResponse
 from django.contrib import messages
 
 from products.models import Product
@@ -33,8 +33,8 @@ def add_to_basket(request, item_id):
                 basket[item_id]['items_by_size'][size] += quantity
                 messages.success(request, (
                     f'Updated size {size.upper()}'
-                    f'{product.name} quantity to {basket[
-                        item_id]["items_by_size"][size]}')
+                    f'{product.name} quantity to {basket[item_id][
+                    "items_by_size"][size]}')
             else:
                 basket[item_id]['items_by_size'][size] = quantity
                 messages.success(request, (
