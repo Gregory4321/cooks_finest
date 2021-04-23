@@ -449,4 +449,8 @@ a.category-badge > span.badge:hover {
     #discount-banner h5 {
         font-size: .8rem;
     }
+
+    #main-nav a {
+        margin-bottom: 0.25rem;
+    }
 }
