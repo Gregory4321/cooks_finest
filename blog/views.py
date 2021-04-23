@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import BlogPost
 from .forms import BlogForm
 
@@ -31,10 +32,15 @@ def blog_detail(request, slug):
     return render(request, 'blog/blog_detail.html', context)
 
 
+@login_required
 def add_blog(request):
     """
     Add a blog to the blog page
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, this is only for store owners.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
@@ -56,10 +62,15 @@ def add_blog(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_blog(request, slug):
     """
     Edit a blog on the blog page
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, this is only for store owners.')
+        return redirect(reverse('home'))
+
     blog = get_object_or_404(BlogPost, slug=slug)
 
     if request.method == 'POST':
@@ -84,10 +95,15 @@ def edit_blog(request, slug):
     return render(request, template, context)
 
 
+@login_required
 def delete_blog(request, slug):
     """
     Delete a blog on from the blog page
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, this is only for store owners.')
+        return redirect(reverse('home'))
+
     blog = get_object_or_404(BlogPost, slug=slug)
     blog.delete()
     messages.success(request, f'Successfully deleted "{blog.title}".')
