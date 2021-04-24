@@ -1,0 +1,33 @@
+{
+    "python.linting.pylintArgs": [
+      "--load-plugins=pylint_django",
+      "--load-plugins=pylint_django.checkers.migrations",
+      "--disable=no-member",
+      "--django-settings-module=cooks_finest.settings",
+      "--disable=broad-except"
+    ],
+    "python.linting.ignorePatterns": [
+      "**/site-packages/**/*.py",
+      "**/migrations/**"
+    ],
+    "files.exclude": {
+      "**/.pyc": true,
+      "**/__pycache__": true,
+      ".pytest_cache": true,
+      "**/.pyi": true
+    },
+    "editor.formatOnSave": true,
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "[django-html]": {
+        "editor.defaultFormatter": "HookyQR.beautify",
+        "editor.quickSuggestions": {
+            "comments": true,
+            "other": true,
+            "strings": true
+        },
+        "editor.tabSize": 4,
+        "editor.wordWrap": "on"
+    },
+  }

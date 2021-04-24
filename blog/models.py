@@ -1,3 +1,6 @@
+"""
+Blog models.py
+"""
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -8,6 +11,9 @@ STATUS = (
 
 
 class BlogPost(models.Model):
+    """
+    Blog Post model
+    """
     title = models.CharField(max_length=254, unique=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

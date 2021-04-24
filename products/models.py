@@ -1,14 +1,22 @@
+"""
+Product models.py
+"""
 from django.db import models
 from django.db.models import Avg
 
 
 def calculate_rating(self):
+    """
+    Calculate rating from reviews
+    """
     self.rating = self.reviews.aggregate(Avg("review_rating"))
     self.save()
 
 
 class Category(models.Model):
-
+    """
+    Category model
+    """
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -19,11 +27,16 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
+        """
+        Return friendly name
+        """
         return self.friendly_name
 
 
 class Product(models.Model):
-    """ Products Form Fields """
+    """
+    Products Form Fields
+    """
     category = models.ForeignKey(
         'Category',
         null=True,

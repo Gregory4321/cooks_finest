@@ -1,3 +1,6 @@
+"""
+Checkout models.py
+"""
 import uuid
 
 from django.db import models
@@ -11,6 +14,9 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """
+    Order model
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(
         UserProfile,
@@ -89,6 +95,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Order line item model
+    """
     order = models.ForeignKey(
         Order, null=False, blank=False,
         on_delete=models.CASCADE, related_name='lineitems')

@@ -1,8 +1,14 @@
+"""
+Blog admin.py
+"""
 from django.contrib import admin
 from .models import BlogPost
 
 
 class BlogPostAdmin(admin.ModelAdmin):
+    """
+    Admin display for blog post
+    """
     list_display = (
         'title',
         'author',
