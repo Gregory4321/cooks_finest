@@ -28,10 +28,6 @@
     color: #000;
 }
 
-/* #accordion .btn-link:hover i {
-    text-decoration: none;
-} */
-
 #accordion .card-header.active .caret-icon i {
     transform: rotate(180deg);
 }
