@@ -14,8 +14,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
+            <!-- Page Heading -->
                 <h2 class="text-uppercase">Products</h2>
                 {% for c in current_categories %}
+                    <!-- Category Buttons -->
                     <a href="{% url 'products' %}?category={{ c.name }}" class="text-decoration-none category-badge">
                         <span class="badge badge-white text-black border border-black rounded-0 p-2 mt-2">{{ c.friendly_name }}</span>
                     </a>
@@ -28,6 +30,7 @@
                 <div class="row mt-1 mb-2">
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                         <div class="w-50 sort-select-wrapper">
+                            <!-- Sort Selector Box -->
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
@@ -43,6 +46,7 @@
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
+                            <!-- Link to home page and product count after search -->
                             {% if search_term or current_categories or current_sorting  != 'None_None' %}
                                 <span class="small"><a href="{% url 'products' %}">Product's Home</a> | </span>
                             {% endif %}
@@ -53,7 +57,9 @@
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <!-- Product Cards -->
                             <div class="card h-100 border-0">
+                                <!-- Product Image -->
                                 {% if product.image %}
                                     <a href="{% url 'product_detail' product.id %}">
                                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
@@ -64,24 +70,29 @@
                                     </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
+                                    <!-- Product Name -->
                                     <p class="mb-0">{{ product.name }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
+                                            <!-- Product Price -->
                                             <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                                             {% if product.category %}
                                                 <p class="small mt-1 mb-0">
+                                                    <!-- Product Category -->
                                                     <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">
                                                         <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                                     </a>
                                                 </p>
                                             {% endif %}
+                                            <!-- Product Rating -->
                                             {% if product.rating %}
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
+                                            <!-- Superuser edit/delete Buttons -->
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
                                                     <a href="{% url 'edit_product' product.id %}">Edit</a> |
@@ -93,6 +104,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Loop to control horizontal rule on differnet screen sizes -->
                         {% if forloop.counter|divisibleby:1 %}
                         <div class="col-12 d-sm-none mb-5">
                             <hr>

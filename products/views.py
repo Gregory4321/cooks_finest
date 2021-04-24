@@ -46,7 +46,8 @@ def all_products(request):
                 messages.error(request, "You didn't enter any search criteria")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = (
+                Q(name__icontains=query) | Q(description__icontains=query))
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -88,7 +89,8 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, f'Successfully added product "{product.name}".')
+            messages.success(request, (
+                f'Successfully added product "{product.name}".'))
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(
