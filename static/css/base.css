@@ -8,6 +8,9 @@ body {
     height: calc(100vh - 164px);
     color: #000;
     font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .text-black {
@@ -29,7 +32,7 @@ body {
     width: 1.5rem;
 }
 
-/* Home/Landing Page */
+/* ---------------------------------------------------- Home/Landing Page */
 
 .home-body-section {
     background-color: #fff;
@@ -56,7 +59,7 @@ body {
     width: 450px;
 }
 
-/* Navbar */
+/* ----------------------------------------------------  Navbar */
 
 .top-nav-icon:hover {
     text-decoration: underline;
@@ -110,7 +113,7 @@ body {
     color: #E1AD01;
 }
 
-/* Buttons */
+/* ----------------------------------------------------  Buttons */
 
 .btn-black {
     background: #000;
@@ -151,7 +154,7 @@ a.category-badge > span.badge:hover {
     color: #E1AD01 !important;
 }
 
-/* Back to top button */
+/* ----------------------------------------------------  Back to top button */
 
 .btt-button {
     display: none;
@@ -182,13 +185,13 @@ a.category-badge > span.badge:hover {
     color: #000;
 }
 
-/* Forms */
+/* ----------------------------------------------------  Forms */
 
 .input[name='q']::placeholder {
     color: #aab7c4;
 }
 
-/* Toasts */
+/* ----------------------------------------------------  Toasts */
 
 .message-container {
     position: fixed;
@@ -256,14 +259,18 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
-/* Product Detail Page */
+/* ----------------------------------------------------  Product Detail Page */
 
 .review-card {
     margin: 2rem auto;
     width: 75%;
 }
 
-/* Footer */
+/* ----------------------------------------------------  Footer */
+
+footer {
+    margin-top: auto;
+}
 
 .footer-container {
     background-color: #000;
@@ -292,6 +299,10 @@ a.category-badge > span.badge:hover {
     color: #fff;
 }
 
+.contact-link a {
+    color: #fff;
+}
+
 .contact-link a:hover {
     text-decoration: none;
     color: #E1AD01;
@@ -309,7 +320,7 @@ a.category-badge > span.badge:hover {
     color: #E1AD01;
 }
 
-/* --------------------- Media Queries */
+/* ----------------------------------------------------  Media Queries */
 
 /* Container larger on xl screens */
 @media (min-width: 1200px) {
@@ -413,6 +424,8 @@ a.category-badge > span.badge:hover {
     margin-top: 3rem;
 }
 
+/* ---------------------------------------------------- Media Queries */
+
 @media (min-width: 1024px) {
     .checkout-btn {
         margin-top: 0.5rem;
@@ -509,6 +522,17 @@ a.category-badge > span.badge:hover {
     }
 }
 
+@media (max-width: 450px) {
+   .jumbotron {
+        width: 325px;
+        height: 200px;
+   }
+
+   .display-4 {
+   	font-size: 1.5rem;
+   }
+}
+
 @media (max-width: 411px) {
     .main-navbar li p {
         font-size: 14px;
@@ -522,3 +546,14 @@ a.category-badge > span.badge:hover {
         margin-bottom: 0.25rem;
     }
 }
+
+@media (max-width: 320px) {
+    .jumbotron {
+         width: 300px;
+         height: 200px;
+    }
+
+    .display-4 {
+        font-size: 1.5rem;
+    }
+ }
