@@ -1,9 +1,5 @@
-.card-body {
-    padding: 0.75rem;
-}
-
-.body-text {
-    margin-bottom: 0.5rem;
+.blog-section {
+    margin-bottom: 1rem;
 }
 
 .blog-image-container {
@@ -11,8 +7,8 @@
     margin-top: 3rem;
 }
 
-.blog-content {
-    margin-top: 2rem;
+.card-img {
+    max-height: 550px;
 }
 
 @media (max-width:768px) {
@@ -20,19 +16,11 @@
         width: 100%;
         margin-top: 1rem;
     }
-
-    .blog-content {
-        margin-top: 1.5rem;
-    }
 }
 
 @media (max-width:411px) {
     .blog-details-title {
         font-size: 28px;
-    }
-
-    .blog-image-container {
-        margin-top: 0.5rem;
     }
 }
 

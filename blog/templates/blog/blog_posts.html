@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -18,8 +22,14 @@
                 <hr class="w-50">
             </div>
         </div>
+        <!-- Page subheading -->
         <div class="row">
-            <div class="blog-container col-10 offset-1">
+            <div class="col-12 text-center mt-3 mb-3">
+                <h6 class="text-uppercase">here at Cook's Finest, we want to keep up to date with all the latest kitchen trends and cooking tips. Take a look at our revolutionary blog posts!</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blog-container blog-section col-10 offset-1">
                 {% for blog in blogs %}
                 <!-- Blog Card -->
                 <div class="card mb-3">
@@ -28,18 +38,18 @@
                             <!-- Blog Image -->
                             {% if blog.image %}
                             <a href="{% url 'blog_detail' blog.slug %}" target="_blank">
-                                <img src="{{ blog.image.url }}" alt="{{ blog.name }}" class="card-img blog-detail-img">
+                                <img src="{{ blog.image.url }}" alt="{{ blog.name }}" class="card-img img-fluid">
                             </a>
                             {% else %}
                                 <a href="{% url 'blog_detail' blog.slug %}" target="_blank">
-                                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.name }}" class="img-fluid blog-detail-img">
+                                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.name }}" class="card-img img-fluid">
                                 </a>
                             {% endif %}
                         </div>
                         <!-- Card Body -->
                         <div class="col-lg-8">
                             <div class="card-body">
-                                <a href="{% url 'blog_detail' blog.slug %}" target="_blank" class="text-black"><h5 class="card-title mb-1">{{ blog.title }}</h5></a>
+                                <a href="{% url 'blog_detail' blog.slug %}" target="_blank" class="text-black"><h5 class="card-title blog-details-title mb-1">{{ blog.title }}</h5></a>
                                 <small class="card-text text-muted">{{ blog.author }} | {{ blog.created_on}}</small>
                                 <!-- Superuser edit/delete buttons -->
                                 {% if request.user.is_superuser %}
