@@ -10,26 +10,25 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="mx-auto my-auto text-center">
-                <!-- Jumbotron Container -->
-                <div class="jumbotron bg-cover">
-                    <!-- Headline Text -->
-                    <h1 class="display-4 text-uppercase headline-text">
-                        The spring collection is here
-                    </h1>
-                    <div class="mb-4 mt-4">
-                        <h4>
-                            <!-- Shop nOw button - to all products page -->
-                            <a href="{% url 'products' %}" class="btn btn-black btn-lrg text-uppercase py-2">Shop Now</a>
-                        </h4>
-                    </div>
+
+<div class="jumbotron-section jumbotron-container">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron text-center jumbotron-content">
+                <h1 class="display-4 text-uppercase">
+                    The spring collection is here
+                </h1>
+                <div class="mb-4 mt-4">
+                    <h4>
+                        <!-- Shop now button - to all products page -->
+                        <a href="{% url 'products' %}" class="btn btn-black btn-lrg text-uppercase py-2">Shop Now</a>
+                    </h4>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
+    <!-- Call to action cards -->
     <section class="home-body-section">
         <div class="home-body">
             <div class="row">
