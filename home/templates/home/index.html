@@ -70,8 +70,15 @@
                     <h2 class="text-uppercase">New Arrivals</h2>
                     <hr class="w-50">
                 </div>
-            </div>
+            </div>    
             <div class="container">
+                <!-- See all link -->
+                <div class="row see-all">
+                    <a href="{% url 'products' %}?category=new_arrivals" class="see-all-link">
+                        <small class="text-black">See All</small>
+                            <i class="fas fa-arrow-right fa-xs ml-1 text-black"></i>
+                    </a>
+                </div>
                 <!-- New Arrivals section for mobile and laptop screen sizes -->
                 <div class="row">
                     {% for new_arrival in home_new_arrivals|slice:":3" %}
