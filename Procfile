@@ -1,0 +1,1 @@
+web: gunicorn cooks_finest.wsgi:application
