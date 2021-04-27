@@ -50,7 +50,7 @@
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                            <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
+                            <a href="#deleteProduct{{ product.id }}" class="text-danger" data-toggle="modal" >Delete</a>
                         </small>
                     {% endif %}
                     <!-- Product Description -->
@@ -116,7 +116,6 @@
             </div>
         </div>
         <div class="row">
-
             <div class="col text-center add-review-link">
                 <!-- Add Review Link -->
                 <a href="{% url 'add_review' product.id %}" class="text-black mb-3">Add Review<i class="fas fa-plus ml-2"></i></a>
@@ -150,6 +149,32 @@
                     {% endif %}
                 </div>
             </div>
+        </div>
+        <!-- Delete Modal -->
+        <div class="modal fade text-center" id="deleteProduct{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteProduct{{ product.id }}ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- Close button -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <!-- Modal heading -->
+                        <h5 class="modal-title" id="deleteProduct{{ product.id }}Label">
+                            Are you sure you want to delete <br>" {{ product.name }} " ? <br>
+                        </h5>
+                        <p>Once you do you will not be able to undo this action.</p>
+                    </div>              
+                    <div class="modal-footer modal-btns">
+                        <!-- Cancel button -->
+                        <button type="button" class="btn text-uppercase cancel-btn" data-dismiss="modal">Cancel</button>
+                        <!-- Delete button -->
+                        <a id="checkoutButton" href="{% url 'delete_product' product.id %}" class="btn delete-btn">
+                            <span class="text-uppercase text-danger">Delete</span>                      
+                        </a>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
 {% endblock %}

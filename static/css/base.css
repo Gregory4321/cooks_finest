@@ -278,6 +278,20 @@ a.category-badge > span.badge:hover {
     margin-bottom: 0.25rem;
 }
 
+/* ----------------------------------------------------  Modal */
+
+.modal-header {
+    display: block;
+}
+
+.modal-header p {
+    margin-top: 1rem;
+}
+
+.modal-btns {
+    display: initial;
+}
+
 /* ----------------------------------------------------  Footer */
 
 footer {
