@@ -24,11 +24,11 @@ def contact(request):
                           ['greg.jlewis321@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found!')
-            return redirect('/contact',
-                            messages.success(request,
-                                             "Thank you for contacting Cook's Finest. \
-                                        We will respond to you as \
-                                            soon as possible."))
+            messages.success(request, (
+                "Thank you for contacting Cook's Finest. "
+                "We will respond to you as soon as possible."
+            ))
+            return redirect('home')
 
     context = {
         'form': form,
