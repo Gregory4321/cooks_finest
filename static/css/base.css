@@ -265,9 +265,17 @@ a.category-badge > span.badge:hover {
 
 /* ----------------------------------------------------  Product Detail Page */
 
+.add-review-link a:hover i {
+    color: #E1AD01;
+}
+
 .review-card {
     margin: 2rem auto;
     width: 75%;
+}
+
+.review-card-content {
+    margin-bottom: 0.25rem;
 }
 
 /* ----------------------------------------------------  Footer */
