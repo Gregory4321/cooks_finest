@@ -28,6 +28,14 @@
     color: #000;
 }
 
-#accordion .card-header.active .caret-icon i {
-    transform: rotate(180deg);
+#accordion {
+    margin-bottom: 2rem;
+}
+
+.card-panel-heading {
+    cursor: pointer;
+}
+
+.card-panel-heading:hover a {
+    text-decoration: underline;
 }
