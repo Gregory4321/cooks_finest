@@ -1,8 +1,14 @@
+"""
+Reviews admin.py
+"""
 from django.contrib import admin
 from .models import Review
 
 
 class ReviewAdmin(admin.ModelAdmin):
+    """
+    Admin display for reviews
+    """
     list_display = (
         'product',
         'review_title',

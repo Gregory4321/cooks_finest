@@ -4,7 +4,8 @@
       "--load-plugins=pylint_django.checkers.migrations",
       "--disable=no-member",
       "--django-settings-module=cooks_finest.settings",
-      "--disable=broad-except"
+      "--disable=broad-except",
+      "--disable=modelform-uses-exclude"
     ],
     "python.linting.ignorePatterns": [
       "**/site-packages/**/*.py",

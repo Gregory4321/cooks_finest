@@ -1,8 +1,14 @@
+"""
+Reviews models.py
+"""
 from django.db import models
 from profiles.models import UserProfile
 
 
 class Review(models.Model):
+    """
+    Review models.py
+    """
     product = models.ForeignKey(
         'products.Product',
         null=True,
