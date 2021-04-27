@@ -265,6 +265,10 @@ a.category-badge > span.badge:hover {
 
 /* ----------------------------------------------------  Product Detail Page */
 
+.products-row {
+    margin-bottom: 1rem;
+}
+
 .add-review-link a:hover i {
     color: #E1AD01;
 }
@@ -450,8 +454,6 @@ footer {
     margin-top: 3rem;
 }
 
-/* ---------------------------------------------------- Media Queries */
-
 @media (min-width: 1024px) {
     .checkout-btn {
         margin-top: 0.5rem;
@@ -554,6 +556,14 @@ footer {
    .display-4 {
    	font-size: 2rem;
    }
+
+   .home-body-section {
+    padding: 20px;
+    }
+
+    .products-row {
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: 411px) {
