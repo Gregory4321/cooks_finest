@@ -6,8 +6,10 @@ from .forms import ReviewForm
 from .models import Review
 from profiles.models import UserProfile
 from django.db.models import Avg
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def add_review(request, product_id):
     """
     Add a review to a product
