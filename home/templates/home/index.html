@@ -1,16 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
-
 {% block content %}
-
 <div class="jumbotron-section jumbotron-container">
     <div class="row">
         <div class="col-12">
@@ -28,178 +25,177 @@
         </div>
     </div>
 </div>
-    <!-- Call to action cards -->
-    <section class="home-body-section">
-        <div class="home-body">
-            <div class="row">
-                <div class="col-12 col-md-6 cards">
-                    <!-- Blog Card -->
-                    <div class="card bg-dark text-white text-center">
-                        <img src="{{ MEDIA_URL }}blog-image.jpg" class="card-img custom-card-img" alt="Blog card image">
-                        <div class="card-img-overlay text-center d-flex">
-                            <div class="align-self-center mx-auto">
-                                <!-- Button to Blog -->
-                                <h5 class="card-title">Check out our blog page</h5>
-                                <a href="{% url 'blogs' %}" class="btn btn-black btn-sm text-uppercase py-1">Go There</a>
-                            </div>
+<!-- Call to action cards -->
+<section class="home-body-section">
+    <div class="home-body">
+        <div class="row">
+            <div class="col-12 col-md-6 cards">
+                <!-- Blog Card -->
+                <div class="card bg-dark text-white text-center">
+                    <img src="{{ MEDIA_URL }}blog-image.jpg" class="card-img custom-card-img" alt="Blog card image">
+                    <div class="card-img-overlay text-center d-flex">
+                        <div class="align-self-center mx-auto">
+                            <!-- Button to Blog -->
+                            <h5 class="card-title">Check out our blog page</h5>
+                            <a href="{% url 'blogs' %}" class="btn btn-black btn-sm text-uppercase py-1">Go There</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 cards">
-                    <!-- Special Offers Card -->
-                    <div class="card bg-dark text-white">
-                        <img src="{{ MEDIA_URL }}special-image.jpeg" class="card-img custom-card-img" alt="Special Offers card image">
-                        <div class="card-img-overlay text-center d-flex">
-                            <div class="align-self-center mx-auto">
-                                <h5 class="card-title">Take a look at our special offers</h5>
-                                <!-- Button to Special Offers Page -->
-                                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance"
-                                    class="btn btn-black btn-sm text-uppercase py-1">Shop Now</a>
-                            </div>
+            </div>
+            <div class="col-12 col-md-6 cards">
+                <!-- Special Offers Card -->
+                <div class="card bg-dark text-white">
+                    <img src="{{ MEDIA_URL }}special-image.jpeg" class="card-img custom-card-img" alt="Special Offers card image">
+                    <div class="card-img-overlay text-center d-flex">
+                        <div class="align-self-center mx-auto">
+                            <h5 class="card-title">Take a look at our special offers</h5>
+                            <!-- Button to Special Offers Page -->
+                            <a href="{% url 'products' %}?category=new_arrivals,deals,clearance"
+                                class="btn btn-black btn-sm text-uppercase py-1">Shop Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- New Arrivals Section -->
-    <section>
-        <div class="new-arrivals-section container-fluid">
+    </div>
+</section>
+<!-- New Arrivals Section -->
+<section>
+    <div class="new-arrivals-section container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="text-uppercase">New Arrivals</h2>
+                <hr class="w-50">
+            </div>
+        </div>
+        <div class="container">
+            <!-- See all link -->
+            <div class="row see-all">
+                <a href="{% url 'products' %}?category=new_arrivals" class="see-all-link">
+                <small class="text-black">See All</small>
+                <i class="fas fa-arrow-right fa-xs ml-1 text-black"></i>
+                </a>
+            </div>
+            <!-- New Arrivals section for mobile and laptop screen sizes -->
             <div class="row">
-                <div class="col text-center mt-3">
-                    <h2 class="text-uppercase">New Arrivals</h2>
-                    <hr class="w-50">
-                </div>
-            </div>    
-            <div class="container">
-                <!-- See all link -->
-                <div class="row see-all">
-                    <a href="{% url 'products' %}?category=new_arrivals" class="see-all-link">
-                        <small class="text-black">See All</small>
-                            <i class="fas fa-arrow-right fa-xs ml-1 text-black"></i>
-                    </a>
-                </div>
-                <!-- New Arrivals section for mobile and laptop screen sizes -->
-                <div class="row">
-                    {% for new_arrival in home_new_arrivals|slice:":3" %}
-                    <div class="col-12 col-md-4 d-sm-none d-md-block">
-                        <div class="card h-100 border-0">
-                            <!-- New Arrival Product Image -->
-                            {% if new_arrival.image %}
-                            <a href="{% url 'product_detail' new_arrival.id %}">
-                                <img src="{{ new_arrival.image.url }}" alt="{{ new_arrival.name }}"
-                                    class="card-img-top img-fluid">
-                            </a>
-                            {% else %}
-                            <a href="{% url 'product_detail' new_arrival.id %}">
-                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ new_arrival.name }}"
-                                    class="card-img-top img-fluid">
-                            </a>
-                            {% endif %}
-                            <!-- New Arrival Product Details -->
-                            <div class="card-body pb-0">
-                                <!-- Product Name -->
-                                <p class="mb-0">{{ new_arrival.name }}</p>
-                            </div>
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <!-- Product Price -->
-                                        <p class="lead mb-0 text-left font-weight-bold">£{{ new_arrival.price }}</p>
-                                        {% if new_arrival.category %}
-                                        <p class="small mt-1 mb-0">
-                                            <!-- Product Category -->
-                                            <a href="{% url 'products' %}?category={{ new_arrival.category.name }}"
-                                                class="text-muted">
-                                                <i class="fas fa-tag mr-1"></i>{{ new_arrival.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                        {% endif %}
-                                        <!-- Product Rating -->
-                                        {% if new_arrival.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ new_arrival.rating }} /
-                                            5</small>
-                                        {% else %}
-                                        <small class="text-muted">No Rating</small>
-                                        {% endif %}
-                                        {% if request.user.is_superuser %}
-                                        <small class="ml-3">
-                                            <!-- Superuser edit/delete buttons -->
-                                            <a href="{% url 'edit_product' new_arrival.id %}">Edit</a> |
-                                            <a href="{% url 'delete_product' new_arrival.id %}"
-                                                class="text-danger">Delete</a>
-                                        </small>
-                                        {% endif %}
-                                    </div>
+                {% for new_arrival in home_new_arrivals|slice:":3" %}
+                <div class="col-12 col-md-4 d-sm-none d-md-block">
+                    <div class="card h-100 border-0">
+                        <!-- New Arrival Product Image -->
+                        {% if new_arrival.image %}
+                        <a href="{% url 'product_detail' new_arrival.id %}">
+                        <img src="{{ new_arrival.image.url }}" alt="{{ new_arrival.name }}"
+                            class="card-img-top img-fluid">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' new_arrival.id %}">
+                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ new_arrival.name }}"
+                            class="card-img-top img-fluid">
+                        </a>
+                        {% endif %}
+                        <!-- New Arrival Product Details -->
+                        <div class="card-body pb-0">
+                            <!-- Product Name -->
+                            <p class="mb-0">{{ new_arrival.name }}</p>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Product Price -->
+                                    <p class="lead mb-0 text-left font-weight-bold">£{{ new_arrival.price }}</p>
+                                    {% if new_arrival.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <!-- Product Category -->
+                                        <a href="{% url 'products' %}?category={{ new_arrival.category.name }}"
+                                            class="text-muted">
+                                        <i class="fas fa-tag mr-1"></i>{{ new_arrival.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                    <!-- Product Rating -->
+                                    {% if new_arrival.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ new_arrival.rating }} /
+                                    5</small>
+                                    {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <!-- Superuser edit/delete buttons -->
+                                        <a href="{% url 'edit_product' new_arrival.id %}">Edit</a> |
+                                        <a href="{% url 'delete_product' new_arrival.id %}"
+                                            class="text-danger">Delete</a>
+                                    </small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                     </div>
-    
-                    {% endfor %}
                 </div>
-                <!-- New Arrivals section for tablet screen sizes -->
-                <div class="row">
-                    {% for new_arrival in home_new_arrivals|slice:":4" %}
-                    <div class="col-sm-6 d-none d-sm-block d-md-none">
-                        <div class="card h-100 border-0">
-                            <!-- New Arrivals product Image -->
-                            {% if new_arrival.image %}
-                            <a href="{% url 'product_detail' new_arrival.id %}">
-                                <img src="{{ new_arrival.image.url }}" alt="{{ new_arrival.name }}"
-                                    class="card-img-top img-fluid">
-                            </a>
-                            {% else %}
-                            <a href="{% url 'product_detail' new_arrival.id %}">
-                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ new_arrival.name }}"
-                                    class="card-img-top img-fluid">
-                            </a>
-                            {% endif %}
-                            <!-- New Arrival Product Details -->
-                            <div class="card-body pb-0">
-                                <!-- Product Name -->
-                                <p class="mb-0">{{ new_arrival.name }}</p>
-                            </div>
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <!-- Product Price -->
-                                        <p class="lead mb-0 text-left font-weight-bold">£{{ new_arrival.price }}</p>
-                                        {% if new_arrival.category %}
-                                        <p class="small mt-1 mb-0">
-                                            <!-- Product Category -->
-                                            <a href="{% url 'products' %}?category={{ new_arrival.category.name }}"
-                                                class="text-muted">
-                                                <i class="fas fa-tag mr-1"></i>{{ new_arrival.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                        {% endif %}
-                                        <!-- Product Rating -->
-                                        {% if new_arrival.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ new_arrival.rating }} /
-                                            5</small>
-                                        {% else %}
-                                        <small class="text-muted">No Rating</small>
-                                        {% endif %}
-                                        {% if request.user.is_superuser %}
-                                        <small class="ml-3">
-                                            <!-- Superuser edit/delete buttons -->
-                                            <a href="{% url 'edit_product' new_arrival.id %}">Edit</a> |
-                                            <a href="{% url 'delete_product' new_arrival.id %}"
-                                                class="text-danger">Delete</a>
-                                        </small>
-                                        {% endif %}
-                                    </div>
+                {% endfor %}
+            </div>
+            <!-- New Arrivals section for tablet screen sizes -->
+            <div class="row">
+                {% for new_arrival in home_new_arrivals|slice:":4" %}
+                <div class="col-sm-6 d-none d-sm-block d-md-none">
+                    <div class="card h-100 border-0">
+                        <!-- New Arrivals product Image -->
+                        {% if new_arrival.image %}
+                        <a href="{% url 'product_detail' new_arrival.id %}">
+                        <img src="{{ new_arrival.image.url }}" alt="{{ new_arrival.name }}"
+                            class="card-img-top img-fluid">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' new_arrival.id %}">
+                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ new_arrival.name }}"
+                            class="card-img-top img-fluid">
+                        </a>
+                        {% endif %}
+                        <!-- New Arrival Product Details -->
+                        <div class="card-body pb-0">
+                            <!-- Product Name -->
+                            <p class="mb-0">{{ new_arrival.name }}</p>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Product Price -->
+                                    <p class="lead mb-0 text-left font-weight-bold">£{{ new_arrival.price }}</p>
+                                    {% if new_arrival.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <!-- Product Category -->
+                                        <a href="{% url 'products' %}?category={{ new_arrival.category.name }}"
+                                            class="text-muted">
+                                        <i class="fas fa-tag mr-1"></i>{{ new_arrival.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                    <!-- Product Rating -->
+                                    {% if new_arrival.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ new_arrival.rating }} /
+                                    5</small>
+                                    {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <!-- Superuser edit/delete buttons -->
+                                        <a href="{% url 'edit_product' new_arrival.id %}">Edit</a> |
+                                        <a href="{% url 'delete_product' new_arrival.id %}"
+                                            class="text-danger">Delete</a>
+                                    </small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
-                    <div class="col-12 mb-3">
-                        <hr>
-                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-12 mb-3">
+                    <hr>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}

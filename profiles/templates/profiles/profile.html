@@ -1,116 +1,111 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
-
 {% block content %}
-    <!-- Page Heading -->
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="text-uppercase mb-4">My Profile</h2>
-                <hr>
+<!-- Page Heading -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="text-uppercase mb-4">My Profile</h2>
+            <hr>
+        </div>
+    </div>
+    <!-- Accordion -->
+    <div id="accordion">
+        <div class="card">
+            <!-- User Details Section -->
+            <div class="card-header card-panel-heading" data-toggle="collapse" data-target="#collapseOne" id="headingOne" aria-expanded="true" aria-controls="collapseOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-link">
+                    User Details
+                    <i class="fas fa-chevron-down ml-1"></i>
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <p class="text-muted">Default Delivery Information</p>
+                    <!-- Default Delivery Form -->
+                    <form action="{% url 'profile' %}" method="POST" class="mt-3" id="profile-update-form">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button class="btn btn-black text-uppercase float-right mb-3">Update Information</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <!-- Accordion -->
-        <div id="accordion">
-            <div class="card">
-                <!-- User Details Section -->
-                <div class="card-header card-panel-heading" data-toggle="collapse" data-target="#collapseOne" id="headingOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h5 class="mb-0">
-                        <a class="btn btn-link">
-                            User Details
-                            <i class="fas fa-chevron-down"></i>
-                        </a>
-                    </h5>
-                </div>
-        
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <p class="text-muted">Default Delivery Information</p>
-                        <!-- Default Delivery Form -->
-                        <form action="{% url 'profile' %}" method="POST" class="mt-3" id="profile-update-form">
-                            {% csrf_token %}
-                            {{ form|crispy }}
-                            <button class="btn btn-black text-uppercase float-right mb-3">Update Information</button>
-                        </form>
-                    </div>
-                </div>
+        <div class="card">
+            <!-- Order History Section -->
+            <div class="card-header card-panel-heading" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-link collapsed">
+                    Order History
+                    <i class="fas fa-chevron-down ml-1"></i>
+                    </a>
+                </h5>
             </div>
-            <div class="card">
-                <!-- Order History Section -->
-                <div class="card-header card-panel-heading" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <h5 class="mb-0">
-                        <a class="btn btn-link collapsed">
-                            Order History
-                            <i class="fas fa-chevron-down"></i>
-                        </a>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="card-body">
-                        <p class="text-muted">Order History</p>
-                        <div class="order-history table-responsive">
-                            <!-- Order History Table -->
-                            <table class="table table-sm table-borderless">
-                                <thead>
-                                    <tr>
-                                        <th>Order Number</th>
-                                        <th>Date</th>
-                                        <th>Items</th>
-                                        <th>Order Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for order in orders %}
-                                        <tr>
-                                            <td>
-                                                <!-- Order Number -->
-                                                <a href="{% url 'order_history' order.order_number %}" 
-                                                title="{{ order.order_number }}">
-                                                    {{ order.order_number|truncatechars:6 }}
-                                                </a>
-                                            </td>
-                                            <!-- Order Date -->
-                                            <td>{{ order.date }}</td>
-                                            <td>
-                                                <ul class="list-unstyled">
-                                                    {% for item in order.lineitems.all %}
-                                                        <!-- Order Size and Name -->
-                                                        <li class="small">
-                                                            {% if item.product.has_sizes %}
-                                                                Size: {{ item.product.size|upper }}
-                                                            {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                                        </li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </td>
-                                            <!-- Order Grand Total -->
-                                            <td>£{{ order.grand_total }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <p class="text-muted">Order History</p>
+                    <div class="order-history table-responsive">
+                        <!-- Order History Table -->
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Order Number</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Order Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        <!-- Order Number -->
+                                        <a href="{% url 'order_history' order.order_number %}" 
+                                            title="{{ order.order_number }}">
+                                        {{ order.order_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <!-- Order Date -->
+                                    <td>{{ order.date }}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            {% for item in order.lineitems.all %}
+                                            <!-- Order Size and Name -->
+                                            <li class="small">
+                                                {% if item.product.has_sizes %}
+                                                Size: {{ item.product.size|upper }}
+                                                {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <!-- Order Grand Total -->
+                                    <td>£{{ order.grand_total }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
-
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+{{ block.super }}
+<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
