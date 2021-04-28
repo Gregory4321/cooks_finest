@@ -459,6 +459,8 @@ Time was against me with this project, and unfortuantly I wasn't able to impleme
 - Account login via social media
   For the modern times that we live in now, nearly everyone has a social media account. Being able to log in to this site using their social media accounts would be very desirable as it would save them having to manually enter their details into the register form, and with that their email addrerss would be automatically confirmed as they would have had to allow access from their chosen social media sign up choice.
 
+[Back to Top](#table-of-contents)
+
 ---
 
 ## Testing
@@ -467,17 +469,303 @@ Time was against me with this project, and unfortuantly I wasn't able to impleme
 
 ## **Deployment**
 
+This multi-page fully functioning e-commerce website was developed in Gitpod and pushed to a remote repository on Github, using Git as version control. This project was deployed to Heroku, and made use of AWS (Amazon Web Services and its S3 Bucket) to store static and media files.
+
 ---
 
 ### Local Deployment
 
-To run your own version of this project, it can be cloned or downloaded from Github
+To run your own version of this project, it can be cloned or downloaded from Github. Once you have decided on which IDE you want to use, make sure that you have the following installed:
+
+- Git - for version control
+- PIP - to install packages
+- Python - the programming language used for the backend logic
+
+Github offers a few ways to clone a repository. You can simply download the entire repo as a zip file, and then upload that zip into a new workspace. Otherwise, on the repositories page in Github, follow these steps:
+
+1. Click the 'Code' button.
+
+2. In its dropdown menu, click the clipboard icon to copy the URL.
+
+3. In the terminal window back in your IDE, make sure the current working directory is the location where you wan to clone the repository.
+
+4. In the command line, paste in the URL retrieved from the repo using the command:
+
+```bash
+git clone <copied-repository-url-from-Step-2-^^>
+```
+
+5. Create your environment variables. You can either go to the Gitpod dashboard, go to Settings => Variables => and then add them there, or create a env.py file, and add the env.py file to your .gitignore file in your projects rot directory. Either way works the great and the same way, just make sure these variables are included:
+
+```bash
+DEVELOPMENT = True
+SECRET_KEY = YOUR_SECRET_KEY
+STRIPE_PUBLIC_KEY = YOUR_STRIPE_PUBLIC_KEY
+STRIPE_SECRET_KEY = YOUR_STRIPE_SECRET_KEY
+STRIPE_WH_SECRET = YOUR_STRIPE_WH_SECRET
+```
+
+You will need to sign up to stripe. Upon doing so, you can get the PUBLIC and SECRET keys from the left column of the page, clicking "Developers", and API Keys. Once you have set up the webhook endpoints, you will be given a unique STRIPE_WH_SECRET key.
+
+More information on this can be found [here](https://stripe.com/docs).
+
+6. Install the required dependencies needed to run the app by typing in the command line:
+
+```bash
+pip3 install -r requirements.txt
+```
+
+7. This project will now be set up and ready to run. In the command line, type:
+
+```bash
+python3 manage.py runserver
+```
+
+You can create a super user to access the admin backend.
+
+```bash
+python3 manage.py creatsuperuser
+```
+
+To access the admin backend add to the end of the sites url:
+
+```bash
+https://<cooks-finest-url>/admin
+```
+
+This will allow to do add, edit and delete products, categories, users, orders, as well as verify any email addresses.
+
+8. Your models will need to be migrated in order to create them in the database. In the command line, type:
+
+```bash
+python3 manage.py makemigrations
+
+***FOLLOWED BY***
+
+python3 manage.py migrate
+```
+
+Whenever a model is edited they will need to be migrated. To make sure you are migrating the correct models, you can run a dry run flag on makemigrations to make sure you know which models are to be migrated, and a plan flag on migrate before actually using 'makemigrations' and 'migrate',
+
+```bash
+python3 manage.py makemigrations --dry-run
+
+python3 manage.py migrate --plan
+```
+
+[Back to Top](#table-of-contents)
 
 ---
 
 ### Deployment to Heroku
 
-To deploy this project to Heroku:
+Deploying this site to Heroku.
+
+1. If you haven't got one already, create an account for Heroku. From signing in on their website, click 'New', found at the top right of the dashboard, and then 'Create new app'.
+
+2. Give the app a unique name, and set the region to whatever region is closet to your own location, then click 'Create app'.
+
+3. Once created, click on the 'Resources' tab, and in the add ons search bar, type postgres, and click 'Heroku Postgres', and then use the free plan, and confirm. This will provision a new Postgres database.
+
+4. There are some extra dependencies and files needed. You will also need to install:
+
+- psycopg2-binary - a PostgreSQL database adapter for the Python programming language.
+- dj_database_url - a Django utility which allows you to utilise the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+
+You will also need to install - gunicorn - a Python Web Server Gateway Interface(WSGI) HTTP server., which will act as our web server.
+
+5. After installing these dependencies, run the command:
+
+```bash
+pip3 freeze > requirements.txt
+```
+
+This will ensure that Heroku installs all our apps requirements when we deploy.
+
+6. To save having to manually re-create your database (Postgres is the database used for deployment, and files aren't automatically transferred), you can easily transfer from the development database.
+
+- Make sure you are connected to your mysql database.
+
+- Backup your current database and load it into a db.json file by typing in the command line:
+
+```bash
+python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+```
+
+7. Now to set up the new database. Head to your projects 'settings.py', and import dj_database_url at the top.
+
+8. Scroll down to database's setting, and comment out the default configuration, replacing it with a call to dj_database_url.parse and give it the database URL from Heroku:
+
+```bash
+DATABASES = {
+        'default': dj_database_url.parse("<YOUR_Postrgres_database_URL>")
+    }
+```
+
+This can be found from the settings tab on Heroku, clicking 'Reveal config vars' and copying the value there from the DATABASE_URL key. It will start with 'postgres://'.
+You can also get this from typing in the command line:
+
+```bash
+heroku config
+```
+
+Note: This is a temporary set up, and you should NOT add, commit and push to Github with this URL in your settings file. You DO NOT want this Heroku database config URL in version control for security reasons.
+
+This is now connecting your manage.py file to your new Postgres database. As this is now a new database, you will need to run migrations again to get the database all set up.
+
+9. After this, you can load your product data from the db.json file into Postgres using:
+
+```bash
+python3 manage.py loaddata db.json
+```
+
+10. Next you want to create a superuser to use on the Postgres database:
+
+```bash
+python3 manage.py createsuperuser
+```
+
+Follow the prompts it suggests, and your super user will be created.
+
+11. In 'settings.py', you want to create an if statement so when the Heroku app is running, you connect to the Postgres database, otherwise, you connect to the development database. Replace the database setting with this code:
+
+```bash
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+```
+
+12. Create a Procfile, to tell Heroku how to run this project. Inside this file, add:
+
+```bash
+web: gunicorn cooks_finest.wsgi:application
+```
+
+13. Login to Heroku on the command line, using:
+
+```bash
+heroku login -i
+```
+
+14. Disable collect static so Heroku won't try to collect static files when we deploy. Type in the command line:
+
+```bash
+heroku config:set DISABLE_COLLECTSTATIC=1
+```
+
+15. Add the hostname of your Heroku app to allowed hosts in 'settings.py'.
+
+Heroku can be connected to Github to automatically deploy each time you issue a git push in the command line. The easiest way to enable this is:
+
+1. Open Heroku and navigate to the 'Deploy' tab.
+
+2. Under 'Deployment Method' select 'Connect to Github'.
+
+3. Search for your repositories name and click connect.
+
+4. Then scroll down and click 'Enable Automatic Deploys'.
+
+Your code will now be automatically deployed with every git push from you IDE command line. Upon a git push, you will see the build in progress in the 'Activity' tab on Heroku. You are now deployed to Heroku.
+
+### Hosting Images on Amazon Web Service S3
+
+For this site, the static and media files are hosted in an AWS S3 bucket. You will need to create an account with AWS, and create an S3 bucket, giving it public access. Once this is complete, upload your static and media files into the correct folders. The CORS configuration I used was what Code Institute provided, which is:
+
+```bash
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+
+This is the basic setup of the S3 bucket with AWS, more details can be found [here](https://docs.aws.amazon.com/s3/index.html).
+
+You will the need to set the static and media files in your workspace. For this, you will need to do the following:
+
+1. First, do a pip install of 'boto3' and 'django-storages', and then freeze them into the requirements.txt file so they get installed upon the next push to Heroku.
+
+2. In 'settings.py', add 'storages' under INSTALLED APPS. Then add these following settings to tell Django which bucket it should be communicating with:
+
+```bash
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'cooks-finest'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and Media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+
+When you set up your S3 bucket, you would have downloaded a csv file. In this file you will find your AWS access key and secret access key.
+
+NOTE: It is very important to keep these keys private. If they end up in version control then someone can use them to move and store data through your S3 bucket, where Amazon would bill YOUR registered credit card if it exceeded the limit.
+
+3. Add these keys to your Heroku config variables.
+
+4. Add a variable here with the key of 'USE_AWS' with a value of 'True'. This ensures your settings file knows to use the AWS configuration when deploying to Heroku.
+
+5. Delete the DISABLE_COLLECTIC static variable from Heroku so Django can collect static files automatically uploading them to the S3 bucket.
+
+6. Create a file called 'custom_storages.py'. This will contain the following:
+
+```bash
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+
+This file will link with the settings from above ^^ and tells Django that during production, use the S3 bucket to store the static files whenever collectstatic is run, and any uploaded product images.
+
+7. Add and commit all of these changes, then issue a git push command. This will trigger an automatic deployment to Heroku, and then all of this logic will be implemented, and your static and media files will be applied to your deployed site.
+
+[Back to Top](#table-of-contents)
 
 ---
 
