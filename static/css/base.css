@@ -18,7 +18,10 @@ body {
     border: 1px solid black !important;
 }
 
+
 /* from Bulma */
+
+
 /* Centered and consistent size for FontAwesome */
 
 .icon {
@@ -28,6 +31,7 @@ body {
     height: 1.5rem;
     width: 1.5rem;
 }
+
 
 /* ---------------------------------------------------- Home/Landing Page */
 
@@ -56,6 +60,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
 }
+
 .custom-card-img {
     height: 275px;
     opacity: 0.6;
@@ -72,6 +77,7 @@ body {
 .see-all-link:hover {
     color: #000;
 }
+
 
 /* ----------------------------------------------------  Navbar */
 
@@ -127,6 +133,7 @@ body {
     color: #E1AD01;
 }
 
+
 /* ----------------------------------------------------  Buttons */
 
 .btn-black {
@@ -153,10 +160,11 @@ body {
     font-size: 14px;
 }
 
-a.category-badge > span.badge:hover {
+a.category-badge>span.badge:hover {
     background: #000 !important;
     color: #E1AD01 !important;
 }
+
 
 /* ----------------------------------------------------  Back to top button */
 
@@ -189,11 +197,13 @@ a.category-badge > span.badge:hover {
     color: #000;
 }
 
+
 /* ----------------------------------------------------  Forms */
 
 .input[name='q']::placeholder {
     color: #aab7c4;
 }
+
 
 /* ----------------------------------------------------  Toasts */
 
@@ -218,7 +228,9 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
+
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+
 .arrow-up {
     width: 0;
     height: 0;
@@ -230,7 +242,9 @@ a.category-badge > span.badge:hover {
     right: 36px;
 }
 
+
 /* Convenience classes - colours copied from Bootstrap */
+
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -263,6 +277,7 @@ a.category-badge > span.badge:hover {
     border-bottom-color: #343a40 !important;
 }
 
+
 /* ----------------------------------------------------  Product Detail Page */
 
 .products-row {
@@ -282,6 +297,7 @@ a.category-badge > span.badge:hover {
     margin-bottom: 0.25rem;
 }
 
+
 /* ----------------------------------------------------  Modal */
 
 .modal-header {
@@ -295,6 +311,7 @@ a.category-badge > span.badge:hover {
 .modal-btns {
     display: initial;
 }
+
 
 /* ----------------------------------------------------  Footer */
 
@@ -316,9 +333,9 @@ footer {
 }
 
 .social-link {
-	text-decoration: none;
-	display: inline-block;
-	cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .social-links {
@@ -350,14 +367,18 @@ footer {
     color: #E1AD01;
 }
 
+
 /* ----------------------------------------------------  Media Queries */
 
+
 /* Container larger on xl screens */
+
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
     }
 }
+
 
 /* Allauth form formatting */
 
@@ -381,8 +402,8 @@ footer {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    /* btn */
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -398,15 +419,14 @@ footer {
     line-height: 1.5;
     border-radius: .25rem;
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #E1AD01;
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #E1AD01;
     font-weight: bold;
 }
-
 
 .allauth-form-inner-content a.btn-outline-black {
     color: #000 !important;
@@ -419,8 +439,10 @@ footer {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* Bootstraps text-info colour */
+    color: #17a2b8;
+    /* Bootstraps text-info colour */
 }
+
 
 /* Product and Blog Form */
 
@@ -460,7 +482,9 @@ footer {
     }
 }
 
+
 /* fixed top navbar only on medium and up  */
+
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -469,20 +493,16 @@ footer {
         left: 0;
         z-index: 1000;
     }
-
     .main-navbar {
         background-color: #000;
         color: #fff;
     }
-
     #main-nav a {
         color: #fff;
     }
-
     #main-nav a.dropdown-item {
         color: #000;
     }
-
     .header-container {
         padding-top: 160px;
     }
@@ -492,27 +512,25 @@ footer {
     .header-container {
         padding-top: 112px;
     }
-
     .checkout-btn {
         margin-top: 0.5rem;
     }
 }
 
+
 /* pad the top a bit when navbar is collapsed on mobile */
+
 @media (max-width: 991px) {
     .header-container {
         padding-top: 116px;
     }
-
     .navbar-toggler {
         padding: .6rem .6rem;
         font-size: 1rem;
     }
-
     .nav-link {
         padding: 0.15rem;
     }
-
     #discount-banner h5 {
         font-size: .9rem;
     }
@@ -522,7 +540,6 @@ footer {
     .cards {
         padding: 10px;
     }
-
     .review-card {
         width: 100%;
     }
@@ -532,15 +549,12 @@ footer {
     .checkout-btn {
         margin-top: 0.5rem;
     }
-
     .summary-text {
         margin-top: 0.5rem;
     }
-
     .footer-container {
         height: 150px;
     }
-
     .social-links {
         margin-top: 15px;
     }
@@ -551,16 +565,13 @@ footer {
         margin: 150px auto;
         width: 325px;
         height: 275px;
-   }
-
-   .display-4 {
-   	font-size: 2rem;
-   }
-
-   .home-body-section {
-    padding: 20px;
     }
-
+    .display-4 {
+        font-size: 2rem;
+    }
+    .home-body-section {
+        padding: 20px;
+    }
     .products-row {
         margin-bottom: 0;
     }
@@ -570,11 +581,9 @@ footer {
     .main-navbar li p {
         font-size: 14px;
     }
-
     #discount-banner h5 {
         font-size: .8rem;
     }
-
     #main-nav a {
         margin-bottom: 0.25rem;
     }
@@ -582,11 +591,10 @@ footer {
 
 @media (max-width: 320px) {
     .jumbotron {
-         width: 275px;
-         height: 225px;
+        width: 275px;
+        height: 225px;
     }
-
     .display-4 {
         font-size: 1.75rem;
     }
- }
+}
