@@ -95,9 +95,9 @@ def add_product(request):
                 f'Successfully added product "{product.name}".'))
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(
-                request, 'Failed to add product. \
-                    Please check the form is valid and try again.')
+            messages.error(request, (
+                'Failed to add product. Please '
+                'check the form is valid and try again.'))
     else:
         form = ProductForm()
 
@@ -127,9 +127,9 @@ def edit_product(request, product_id):
                 request, f'Successfully updated "{product.name}".')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(
-                request, f'Failed to update "{product.name}". \
-                    Please check the form is valid and try again.')
+            messages.error(request, (
+                f'Failed to update "{product.name}". '
+                'Please check the form is valid and try again.'))
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are currently editing "{product.name}".')
