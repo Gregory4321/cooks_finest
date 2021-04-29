@@ -14,7 +14,7 @@ class ReviewForm(forms.ModelForm):
         exclude = ('user_profile', 'product',)
 
     review_rating = forms.IntegerField(
-        label='Rating: 0 - 5',
+        label='Rating: 1 - 5',
         widget=forms.NumberInput(
-            attrs={'min': 0, 'max': 5, 'class': 'text-center'})
+            attrs={'min': 1, 'max': 5, 'class': 'text-center'})
     )
