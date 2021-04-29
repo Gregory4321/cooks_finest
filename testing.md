@@ -2,7 +2,7 @@
 
 [back to README.md file](https://github.com/Gregory4321/cooks_finest/blob/master/README.md)
 
-## Table of Contents:
+## Table of Contents
 
 - [Validators](#validators)
   - [W3C Validators](#w3c-validators)
@@ -31,45 +31,45 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate th
 
 All css files passed through the validator with no errors.
 
-[CSS Validation Passed](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/css-pass.png)
+![CSS Validation Passed](media/readme_content/testing_images/css-pass.png)
 
 #### HTML
 
 When running the html code through the validator there appeared to be a pattern of reoccurring errors. These errors were flagged from the use of Django templating logic in the html code, so these errors could be overlooked as they were not a true error.
 
-[HTML Extending base error](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/base-temp-error.png)
+![HTML Extending base error](media/readme_content/testing_images/base-temp-error.png)
 
-[HTML Django template error 1](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/temp-error1.png)
+![HTML Django template error 1](media/readme_content/testing_images/temp-error1.png)
 
-[HTML Django template error 2](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/temp-error2.png)
+![HTML Django template error 2](media/readme_content/testing_images/temp-error2.png)
 
-[HTML Django template error 3](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/temp-error3.png)
+![HTML Django template error 3](media/readme_content/testing_images/temp-error3.png)
 
 #### JavaScript
 
 All js files were tested automatically using JSHint. No errors were given from this, just advice on missing semicolons and warnings of let being available in ES6. Other than this minor issues, all js files and scripts passed.
 
-[JS Hint Warning 1](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/jshint-warning1.png)
+![JS Hint Warning 1](media/readme_content/testing_images/jshint-warning1.png)
 
-[JS Hint Warning 2](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/jshint-warning2.png)
+![JS Hint Warning 2](media/readme_content/testing_images/jshint-warning2.png)
 
 #### Python
 
 The pylint-django extension was installed to the workspace through the command line. This was a great tool to check that all python code had no errors, and over come any code that was tripping up due to Django syntax. I had to create a settings.json file to load the plugs of pyint-django, enabling it to work properly. This straight away resolved some of the issues I had appearing in Django syntax. The special character must be escaped error was removed, and the Class ‘’ has no ‘objects’ member was resolved for all of these occurences.
 
-[Special Escape Warning](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/special-escape.png)
+![Special Escape Warning](media/readme_content/testing_images/special-escape.png)
 
-[No Object Warning](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/no-object.png)
+![No Object Warning](media/readme_content/testing_images/no-object.png)
 
 It also indicated simple errors that were highlighted due to pylint-django requirements. These were easily rectified by executing what it suggested.
 
-[Missing DOC string Warning](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/missing-docstg.png)
+![Missing DOC string Warning](media/readme_content/testing_images/missing-docstg.png)
 
 #### Markdown
 
 To conform with markdown requirements I installed the markdown-lint extension. This was another great tool for ensuring all markdown content conformed and its syntax was correct. It indicated some errors that were not there before. I know these errors were void as I used them in my previous project and were taken from the markdown GitHub, so creating a markdownlint.json file, I was able to disable these errors.
 
-[Markdownlint File](https://github.com/Gregory4321/cooks_finest/blob/master/media/readme_content/testing_images/markdown.png)
+![Markdownlint File](media/readme_content/testing_images/markdown.png)
 
 ---
 
@@ -194,3 +194,317 @@ To conform with markdown requirements I installed the markdown-lint extension. T
 - The same as the edit link, a delete link is presented to the superuser on both the blog posts and blog detail pages to delete a blog. A modal popup will be initiated to conform the deletion of a blog.
 
 ---
+
+## Manual Testing
+
+Maunual testing was thorough throughout the development of this site, but once I deployed I gave it a once over and manually tested the entire deployed site.
+
+### Navigation Bar
+
+#### Desktop View
+
+- Search bar - Searches the database use the query as a key word and returns any products that have the keyword in their title or description
+
+- Logo - returns the user to the home page
+
+- My Account Link - reveals a dropdown menu:
+
+  - If not aunthenticated:
+
+    - Register - directs the user to the registraion page
+
+    - Login - directs the user to the login page
+
+  - If user is authenicated:
+
+    - My Profile - directs the user to their own unique profile page
+
+    - Logout - directs the user to the home page
+
+  - If user is a superuser:
+
+    - Product Management - directs the user to the add product page
+
+    - Blog Management - directs the user to the add blog page
+
+- Basket Link - directs the user to the basket page, changes to yellow upon hover, and solid yellow when something is in the basket
+
+#### Mobile View
+
+- Hamburger icon - activates a dropdown main navigation menu:
+
+  - Home button - directs the user back to theh home page
+
+  - Category buttons - reveals a further dropdown container the categories categories
+
+- Search icon - reveals a dropdown search bar, with the same funcionality as the desktop search bar
+
+- My account Icon - reveals a dropdown woth the same functionality as the desktop view
+
+- Basket icon - directs the user to the basket page
+
+![Mobile navbar](media/readme_content/testing_images/mob-nav.png)
+
+![Dropdown search bar](media/readme_content/testing_images/drop-search.png)
+
+### Footer
+
+#### Desktop and Mobile View
+
+- Social icons - directs the user to the corresponding social media sites
+
+- Contact Us link - directs the user to the contact form page
+
+  - On destop, upon hover of the social icons and contact link they tunn yellow
+
+  - On mobile, upon clicking the social icons and contact link they tunn yellow
+
+### Back to Top Button
+
+#### Desktop and Mobile View
+
+- Back to top button - appears on the bottom right of the screen after user scrolls past 200 pixels
+
+  - Clicking this button inverts the colours and takes the user with a set scroll speed to the top of the page
+
+All of these features are present across every page of the site.
+
+---
+
+### Home Page
+
+#### Desktop and Mobile View
+
+All call to action buttons text colour change to yellow when hovered over.
+
+- Hero image jumbotron "Shop Now" CTA - Directs the user to the all products page
+
+- Blog card "Go There" CTA - Directs the user to the all blogs page
+
+- Special offers card "Shop Now" CTA - Directs the user to the all special offers page
+
+- New Arrivals section
+
+  - See all link - directs the user to the all special offers page
+
+  - Product cards
+
+    - Product image links to individual product detail page
+
+    - Product category link - directs the user to that categories all product page
+
+  - If superuser, edit and delete buttons are presented at the bottom of the cards inline with the rating
+
+    - Edit link - directs the superuser to the edit product page
+
+    - Delete link - brings up a modal asking to confirm delete
+
+      - Delete modal
+
+        - Cancel button - closes the modal and keep the user on the same page
+
+        - Delete button - removes the product from the database
+
+### Profile Page
+
+#### Desktop and Mobile View
+
+- Accordion headers
+
+  - Title underlines and cursor hand appears when hovered over
+
+  - Opens and close the section of the accordion
+
+- User Details
+
+  - Presents a form with placeholders
+
+  - Update Information button - updates the default delivery information
+
+- Order History
+
+  - Order number hover reveals full order number
+
+  - Order number link - directs the user to their past confirmation page
+
+![Order Number Link](media/readme_content/testing_images/order-num.png)
+
+### Products Pages
+
+#### Desktop and Mobile View
+
+- Product's Home link - if a user accesses this page through a search query, a link at the top left directs them back to the all products page
+
+- Sort selector box - allows the user to sort the products by price, raating, name or category, ascending to descending, A to Z
+
+- Product cards
+
+  - Product image links to individual product detail page
+
+  - Product category link - directs the user to that categories all product page
+
+- If superuser, edit and delete buttons are presented at the bottom of the cards inline with the rating
+
+  - Edit link - directs the superuser to the edit product page
+
+  - Delete link - brings up a modal asking to confirm delete
+
+    - Delete modal
+
+      - Cancel button - closes the modal and keep the user on the same page
+
+      - Delete button - removes the product from the database
+
+![Product's home link](media/readme_content/testing_images/prod-home.png)
+
+![Delete Modal](media/readme_content/testing_images/del-modal.png)
+
+### Product Detail Page
+
+#### Desktop and Mobile View
+
+- Product category link - directs the user to that categories all product page
+
+- If superuser, edit and delete buttons are presented inline with the rating above the product description
+
+  - Edit link - directs the superuser to the edit product page
+
+  - Delete link - brings up a modal asking to confirm delete
+
+    - Delete modal
+
+      - Cancel button - closes the modal and keep the user on the same page
+
+      - Delete button - removes the product from the database
+
+![Product delete link](media/readme_content/testing_images/prod-det.png)
+
+- Quantity selector box - allows a user to increase or decrease the quantity of the product to their basket
+
+  - The user can use the -/+ buttons, or the up/down button inside the box, or manually input a figure
+
+- Size dropdown (if applicable) - reveals a dropdown where the user can select a size of the chosen product
+
+- Continue Shopping button - directs the user to the all products page
+
+- Add to basket button - adds the selected product to the basket
+
+- Add reviews link - plus icon turns yellow when link is hovered over - directs the user to the add review form page
+
+- Read reviews page - reveals a dropdown of card(s), rendering a no reviews yet card, or all reviews as individual cards for that product
+
+### Basket Page
+
+#### Desktop and Mobile View
+
+- Quantity selector box - allows a user to increase or decrease the quantity of the product in their basket
+
+  - The user can use the -/+ buttons, or the up/down button inside the box, or manually input a figure
+
+- Update link - updates the quantity after using the selector box - underlined when hovered on
+
+- Remove link - removes the product from the users basket - underlined when hovered on
+
+- Continue Shopping button - directs the user to the all products page
+
+- Secure Checkout button - directs the user to the checkout page
+
+![Basket Page](media/readme_content/testing_images/bas-page.png)
+
+### Checkout page
+
+#### Desktop and Mobile View
+
+- Delivery form on the left. Order summary on the right
+
+- If user is not logged in
+
+  - Form is presented empty and fields contain placeholders indicating what to fill in
+
+  - Below the form links to sign up or login - direct the user to the corresponding pages
+
+- If user is logged in and completed an order form before or entered default delivery details on profile page - form is prefilled will previous entered details
+
+  - Checkbox below form - when checked will save these details of the form as the default delivery details
+
+- Payment box - linked with stripe to use its default card details input box
+
+  - If there is an error inputting your card details a warning appears
+
+![Card Error](media/readme_content/testing_images/card-error.png)
+
+- Adjust Basket button - directs the user back to their basket
+
+- Complete Order button - complete the order process
+
+  - A yellow overlay takes the screen with a loading spinner icon until the order is complete
+
+- If basket is empty
+
+  - Continue Shopping button - directs the user to the all products page
+
+### Checkout Success Page
+
+#### Desktop and Mobile View
+
+- Confirmation box with all entered details to the form presented
+
+- Button - directs the user to the all special offers page
+
+### Contact Page
+
+- Form on the left - placeholders indicating what each input is
+
+- Send Message button - directs the user back to the home page
+
+### Toast Messages
+
+- When the user adds a product to their basket
+
+  - Success toast message contains all the products in the basket, have the ability to scroll through them
+
+  - Secure Checkout button - directs the user to the basket page
+
+- Discount status - indicates to the user how much more to spend to get discount on their order
+
+![Add to basket toast success](media/readme_content/testing_images/suc-toast.png)
+
+### Blog Posts Page
+
+#### Desktop and Mobile View
+
+- Stacked blog post cards
+
+  - If superuser, edit and delete buttons are presented at the bottom of the cards inline with the rating
+
+  - Edit link - directs the superuser to the edit product page
+
+  - Delete link - brings up a modal asking to confirm delete
+
+    - Delete modal
+
+      - Cancel button - closes the modal and keep the user on the same page
+
+      - Delete button - removes the product from the database
+
+  - Card image, title and "Read More" button - directs the user to the blog post detail page
+
+![Blog Posts page](media/readme_content/testing_images/blog-post.png)
+
+### Blog Detail Page
+
+#### Desktop and Mobile View
+
+- Blog detail page opens as a new tab
+
+- If superuser, edit and delete buttons are presented at the bottom of the cards inline with the rating
+
+  - Edit link - directs the superuser to the edit product page
+
+  - Delete link - brings up a modal asking to confirm delete
+
+    - Delete modal
+
+      - Cancel button - closes the modal and keep the user on the same page
+
+      - Delete button - removes the product from the database

@@ -2,7 +2,7 @@
 
 View live project [here]()
 
-![Cook's Finest Am I Responsive image]()
+![Cook's Finest Am I Responsive image](media/readme_content/responsive.png)
 
 Cook's Finest is an online e-commerce store, offering a collection of kitchenware for the savy home cook. User's can create their own account, saving their details for faster checkout for future purchases, but are not limited, and can make a purchase as a guest if wanted. The registered user can edit their personal details and access their shopping history. Blogs are presented for good reads, and a newsletter sign up is offered.
 
