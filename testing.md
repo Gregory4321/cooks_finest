@@ -11,7 +11,7 @@
   - [Markdown](#markdown)
 - [User Story Testing](#user-story-testing)
 - [Manual Testing](#manual-testing)
-  - [Dev Tools](#dev-tools)
+- [Bugs](#bugs)
 - [User Testing](#user-testing)
 
 ---
@@ -58,6 +58,8 @@ All js files were tested automatically using JSHint. No errors were given from t
 The pylint-django extension was installed to the workspace through the command line. This was a great tool to check that all python code had no errors, and over come any code that was tripping up due to Django syntax. I had to create a settings.json file to load the plugs of pyint-django, enabling it to work properly. This straight away resolved some of the issues I had appearing in Django syntax. The special character must be escaped error was removed, and the Class ‘’ has no ‘objects’ member was resolved for all of these occurences.
 
 ![Special Escape Warning](media/readme_content/testing_images/special-escape.png)
+
+![Special Escape Warning 2](media/readme_content/testing_images/special-escape2.png)
 
 ![No Object Warning](media/readme_content/testing_images/no-object.png)
 
@@ -197,7 +199,7 @@ To conform with markdown requirements I installed the markdown-lint extension. T
 
 ## Manual Testing
 
-Maunual testing was thorough throughout the development of this site, but once I deployed I gave it a once over and manually tested the entire deployed site.
+Manual testing was thorough throughout the development of this site, but once I deployed I gave it a once over and manually tested the entire deployed site.
 
 ### Navigation Bar
 
@@ -209,13 +211,13 @@ Maunual testing was thorough throughout the development of this site, but once I
 
 - My Account Link - reveals a dropdown menu:
 
-  - If not aunthenticated:
+  - If not authenticated:
 
-    - Register - directs the user to the registraion page
+    - Register - directs the user to the registration page
 
     - Login - directs the user to the login page
 
-  - If user is authenicated:
+  - If user is authenticated:
 
     - My Profile - directs the user to their own unique profile page
 
@@ -233,17 +235,17 @@ Maunual testing was thorough throughout the development of this site, but once I
 
 - Hamburger icon - activates a dropdown main navigation menu:
 
-  - Home button - directs the user back to theh home page
+  - Home button - directs the user back to the home page
 
   - Category buttons - reveals a further dropdown container the categories categories
 
-- Search icon - reveals a dropdown search bar, with the same funcionality as the desktop search bar
+- Search icon - reveals a dropdown search bar, with the same functionality as the desktop search bar
 
-- My account Icon - reveals a dropdown woth the same functionality as the desktop view
+- My account Icon - reveals a dropdown with the same functionality as the desktop view
 
 - Basket icon - directs the user to the basket page
 
-![Mobile navbar](media/readme_content/testing_images/mob-nav.png)
+![Mobile nav bar](media/readme_content/testing_images/mob-nav.png)
 
 ![Dropdown search bar](media/readme_content/testing_images/drop-search.png)
 
@@ -255,9 +257,9 @@ Maunual testing was thorough throughout the development of this site, but once I
 
 - Contact Us link - directs the user to the contact form page
 
-  - On destop, upon hover of the social icons and contact link they tunn yellow
+  - On destop, upon hover of the social icons and contact link they turn yellow
 
-  - On mobile, upon clicking the social icons and contact link they tunn yellow
+  - On mobile, upon clicking the social icons and contact link they turn yellow
 
 ### Back to Top Button
 
@@ -335,7 +337,7 @@ All call to action buttons text colour change to yellow when hovered over.
 
 - Product's Home link - if a user accesses this page through a search query, a link at the top left directs them back to the all products page
 
-- Sort selector box - allows the user to sort the products by price, raating, name or category, ascending to descending, A to Z
+- Sort selector box - allows the user to sort the products by price, rating, name or category, ascending to descending, A to Z
 
 - Product cards
 
@@ -423,7 +425,7 @@ All call to action buttons text colour change to yellow when hovered over.
 
   - Below the form links to sign up or login - direct the user to the corresponding pages
 
-- If user is logged in and completed an order form before or entered default delivery details on profile page - form is prefilled will previous entered details
+- If user is logged in and completed an order form before or entered default delivery details on profile page - form is pre filled will previous entered details
 
   - Checkbox below form - when checked will save these details of the form as the default delivery details
 
@@ -508,3 +510,21 @@ All call to action buttons text colour change to yellow when hovered over.
       - Cancel button - closes the modal and keep the user on the same page
 
       - Delete button - removes the product from the database
+
+## Bugs
+
+Before discovering the pylint-django extension, I tried to fix the special characters must be escaped linting error by using character entities. Unfortuantely this threw another error
+
+![Fix error attempt](media/readme_content/testing_images/spec-char-fix.png)
+
+During the implementation of the quantity selector box of the basket page, I was having trouble with the right side of the box when a product with a size was added. This was a simple fix where I discovered I was missing a curly bracket.
+
+![Quantity box bug](media/readme_content/testing_images/quant-box-error.png)
+
+Upon ispection of the home screen on smaller sizes, I found that the content below the jumbotron was not full width and got smaller the smaller the screen size got. Upon thorough investigation and help from a fellow slack member I discovered that where I had set the jumbotrons width to 450 pixels, it meant that the rest of the page content got squashed once the screen resolution fell below 450 pixels. For this I changed the width of the jumbotron and gave it media queries for the smaller screen sizes.
+
+![Content shrinking on screen](media/readme_content/testing_images/home-error.png)
+
+A bug occurred when I was trying to add a review to a product. I had the logic all in place, but soon discovered that I had put the calculate_rating function outside of the product model, so it was not being called properly, and threw an error.
+
+![Calculate rating error](media/readme_content/testing_images/calc-rat-error.png)
