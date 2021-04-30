@@ -543,6 +543,10 @@ During the implementation of the quantity selector box of the basket page, I was
 
 ![Quantity box bug](media/readme_content/testing_images/quant-box-error.png)
 
+An unresolved bug I found was that in the confirmation email, the discount and grand total amounts were coming through with 3 digits after the decimal place. I could not find a solution for this and even my mentor wasn't sure whast was going on with this. I tried to use floatformat:2 on the txt file of the confirmation emails as it was used everywhere else related to this but it did not fix the problem.
+
+![3 digits after decimal](media/readme_content/testing_images/digit-error.png)
+
 Upon inspection of the home screen on smaller sizes, I found that the content below the jumbotron was not full width and got smaller the smaller the screen size got. Upon thorough investigation and help from a fellow slack member I discovered that where I had set the jumbotrons width to 450 pixels, it meant that the rest of the page content got squashed once the screen resolution fell below 450 pixels. For this I changed the width of the jumbotron and gave it media queries for the smaller screen sizes.
 
 ![Content shrinking on screen](media/readme_content/testing_images/home-error.png)
@@ -556,6 +560,14 @@ The terminal windows problem tab was a great way to debug my code along the deve
 ![Trailing error in markdown](media/readme_content/testing_images/prob-tab.png)
 
 ![Syntax mistake](media/readme_content/testing_images/terminal-errors.png)
+
+Upon the last few hours before my submission, I discovered a few issues that have arisen. The first one seems to be a generic issue for so many students, as scouring Slack there are so many comments about this issue but no pinned solution. Google doesn't seem to have the answer for this either. The order confirmation email the user receives after placing an order is now not coming through, and yet it was coming through fne before. Also possibly related to this is the Stripe webhook handler payment_intent_succeeded failed, where again it was working fine before. There is no obvious reason for this. I have checked through nearly every file related to the confirmation email and webhook handler. What is even more strange is that the order is being created which wouldn't if the payment hadn't come through. I do wonder if this is an error with Heroku or even Stripe, as again, it WAS working BEFORE. I have a screenshot from when all was working ok. What is sad that the person who reviewed my site on the peer code review channel on Slack commented on how professional the email was and how everything was working nicely as a consumer.
+
+![Confirmation email](media/readme_content/testing_images/email-conf.png)
+
+![Intent Succeeded](media/readme_content/testing_images/intent-suc.png)
+
+Another issue that I have found at this time and do not have the time to debug it and find the error is that the rating system is working one behind. So if a product has no rating, and a review is added with 5 stars, once submitted the rating in the info of the product will still be no rating. If another review of 3 for example is added, the products rating will become 5. And then if another review is added, the products rating wil find the average of the first two reviews, and not take the 3rd review into the equation until a 4th review is added.
 
 ## User Testing
 

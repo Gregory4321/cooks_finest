@@ -800,7 +800,9 @@ This file will link with the settings from above ^^ and tells Django that during
 
 ### Content
 
-All content on the website was written by me, the developer, with inspiration taken from other food and recipe sites and e-commerce stores.
+Content on the website was written by me, the developer, with inspiration taken from other food and recipe sites and e-commerce stores.
+
+Product details were obtained from the linked site of the image I sourced on google images, and the description and used some details either directly or edited.
 
 ### Code
 
