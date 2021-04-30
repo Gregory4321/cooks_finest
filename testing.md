@@ -67,6 +67,14 @@ It also indicated simple errors that were highlighted due to pylint-django requi
 
 ![Missing DOC string Warning](media/readme_content/testing_images/missing-docstg.png)
 
+I also ran the python test command in the terminal to double check over my Python code. It all passed with no issues.
+
+```bash
+python3 manage.py test
+```
+
+![Python CLI test](media/readme_content/testing_images/py-test.png)
+
 #### Markdown
 
 To conform with markdown requirements I installed the markdown-lint extension. This was another great tool for ensuring all markdown content conformed and its syntax was correct. It indicated some errors that were not there before. I know these errors were void as I used them in my previous project and were taken from the markdown GitHub, so creating a markdownlint.json file, I was able to disable these errors.
@@ -543,7 +551,7 @@ A bug occurred when I was trying to add a review to a product. I had the logic a
 
 ![Calculate rating error](media/readme_content/testing_images/calc-rat-error.png)
 
-The terminal windows problem tab was a great way to debug my code along the development process and was used to indicate nay problems along the way. Problems I found from this were used to rectify any mistakes in code, linting errors, and warnings.
+The terminal windows problem tab was a great way to debug my code along the development process and was used to indicate any problems along the way. Problems I found from this were used to rectify any mistakes in code, linting errors, and warnings.
 
 ![Trailing error in markdown](media/readme_content/testing_images/prob-tab.png)
 
@@ -556,6 +564,8 @@ The terminal windows problem tab was a great way to debug my code along the deve
 I submitted my code to the peer-code-review channel page of the Slack community for Code Institute. Unfortunately I only had one reply for this project review submission, however it did point out an issue where the user got a "Server Error (500)" when adding a review to a product. This unfortunately took a long time to discovered, a led to a lot of work needing to be done in the short time I had left. It seemed that the code had not been migrated to the Postgres database, despite the code being pushed and migrated. Trying to solve this I then discovered that the code was now not migrating at all. I decided to use my initiative and destroy the current database, reinstate a new one, and start fresh. I choose to do this because of the length of time I had left before submission was short, and thorough searches on google was leading me to no quick solutions. For some reason when I created the new database, the db.json file that I had used to dump the data from my SQLite3 database in development didn't load the data, so I had to manually re add the data, but thankfully I hadn't fully completed adding products, but this still was a lengthy process. Overall, it fixed the problem, and a user can now add a review to a product.
 
 ![Migration error](media/readme_content/testing_images/mig-error.png)
+
+![Load new data warning](media/readme_content/testing_images/new-dat-warning.png)
 
 ### User Review
 

@@ -826,7 +826,7 @@ These images were then resized to my required sizes for use on the site to keep 
 
 - [Picresize](https://picresize.com/)
 
-The favicon image was created and exported to my computer using the site Canva, and then uploaded to the site [Favicon.io] (https://favicon.io/) to be generated as an ico image, to then be exported back to my computer and then added to my root directory on gitpod.
+The favicon image was created and exported to my computer using the site Canva, and then uploaded to the site [Favicon.io](https://favicon.io/) to be generated as an ico image, to then be exported back to my computer and then added to my root directory on gitpod.
 
 ---
 
