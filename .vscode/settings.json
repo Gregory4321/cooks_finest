@@ -5,8 +5,7 @@
       "--disable=no-member",
       "--django-settings-module=cooks_finest.settings",
       "--disable=broad-except",
-      "--disable=modelform-uses-exclude",
-      "--disable=imported-auth-user"
+      "--disable=modelform-uses-exclude"
     ],
     "python.linting.ignorePatterns": [
       "**/site-packages/**/*.py",
