@@ -73,6 +73,8 @@ To conform with markdown requirements I installed the markdown-lint extension. T
 
 ![Markdownlint File](media/readme_content/testing_images/markdown.png)
 
+[Back to Top](#table-of-contents)
+
 ---
 
 ## User Stories Testing
@@ -143,6 +145,8 @@ To conform with markdown requirements I installed the markdown-lint extension. T
 
 - After each search query, above the presented products to the left, a user can find the details of their search query and how many products match that query.
 
+[Back to Top](#table-of-contents)
+
 ### Purchasing and Checkout
 
 16. As a site user I want to be able to easily select the size and quantity of a product I want to purchase, if applicable so that I can ensure I select the correct size and quantity.
@@ -194,6 +198,8 @@ To conform with markdown requirements I installed the markdown-lint extension. T
 27. As a store owner I want to be able to delete a blog post so that I can keep the most relevant blog posts circulating.
 
 - The same as the edit link, a delete link is presented to the superuser on both the blog posts and blog detail pages to delete a blog. A modal popup will be initiated to conform the deletion of a blog.
+
+[Back to Top](#table-of-contents)
 
 ---
 
@@ -270,6 +276,8 @@ Manual testing was thorough throughout the development of this site, but once I 
   - Clicking this button inverts the colours and takes the user with a set scroll speed to the top of the page
 
 All of these features are present across every page of the site.
+
+[Back to Top](#table-of-contents)
 
 ---
 
@@ -395,6 +403,8 @@ All call to action buttons text colour change to yellow when hovered over.
 
 - Read reviews page - reveals a dropdown of card(s), rendering a no reviews yet card, or all reviews as individual cards for that product
 
+[Back to Top](#table-of-contents)
+
 ### Basket Page
 
 #### Desktop and Mobile View
@@ -511,6 +521,10 @@ All call to action buttons text colour change to yellow when hovered over.
 
       - Delete button - removes the product from the database
 
+[Back to Top](#table-of-contents)
+
+---
+
 ## Bugs
 
 Before discovering the pylint-django extension, I tried to fix the special characters must be escaped linting error by using character entities. Unfortunately this threw another error
@@ -550,3 +564,5 @@ I sent my project out to various friends and family members who kindly tested my
 ### Further Testing
 
 The website was tested on Google Chrome, Internet Explorer and Safari browsers. It was viewed on a range of different devices, such as desktop, laptops, iPhone 5S, iPhone 8 plus, iPhone 12 Pro, iPhoneX, iPad 2019, and Samsung Galaxy. Extensive testing was carried out to make sure the links were working correctly, and that the images loaded correctly, on the site but as well as the documentation. Google Dev Tools was used also throughout the development of this project and was a very handy tool in dealing with decisions of paddings and margins, and general layout of the site.
+
+[Back to Top](#table-of-contents)

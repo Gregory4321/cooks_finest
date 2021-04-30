@@ -1,6 +1,6 @@
 # Milestone Project 4 - Cook's Finest
 
-View live project [here]()
+View live project [here](https://cooks-finest.herokuapp.com/)
 
 ![Cook's Finest Am I Responsive image](media/readme_content/responsive.png)
 
@@ -178,7 +178,7 @@ For this project, I decided to keep the logo as a basic h2 heading, in black fon
 
 #### Conclusion
 
-The final pages...
+I kept the development of this site very close to the design from the wireframes I made during the planning stages. The end result is nearly a carbon copy of these wireframes with a few exceptons. I slightly changed the layout of the pages haveing the headings to the left rather than centered, and on the product detail page I moved the Add to Basket button to below the description. There changes were for the benefit of the user's experience and kept a nicer flow across the pages. I also was not abe to incorporate the breadcrumb navigation with the time this projcct demanded.
 
 [Back to Top](#table-of-contents)
 
@@ -200,7 +200,7 @@ The final pages...
 
 - [Django](https://www.djangoproject.com/) - a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 
-- [Bootstrap 5](https://getbootstrap.com/) - used as the base structure and layout of the site, using its grid system to aid responsiveness across screen sizes. Many components such as the navbar, footer and cards were used. Bootstraps inbuilt Javascript and jQuery was used for initialization of many components such as the dropdown elements and the navbar expand and collapse.
+- [Bootstrap](https://getbootstrap.com/) - used as the base structure and layout of the site, using its grid system to aid responsiveness across screen sizes. Many components such as the navbar, cards and modals were used. Bootstraps inbuilt Javascript and jQuery was used for initialization of many components such as the dropdown elements, modal pop up and the navbar expand and collapse on small screens.
 
 - [jQuery](https://jquery.com/) - utilising it's extensive library to simplify and help writing Javascript code.
 
@@ -251,7 +251,7 @@ The final pages...
 - [Coolors](https://coolors.co/) - used to find and compare colours that complimented one another, retrieve names of colours, and showcase
   the colours on the README.md file as an image.
 
-- [Canva](https://www.canva.com/) - used to design and create the logo and favicon logo.
+- [Canva](https://www.canva.com/) - used to design and create the favicon logo, and resize the product images too be all the same size.
 
 - [Picresize](https://picresize.com/) - used to resize and crop images for better implementation, such as 25% or 50% smaller.
 
@@ -375,7 +375,7 @@ The structure of the Product and Checkout apps are guided by the Code Institute'
 | Product Name | product        | models.ForeignKey    | 'products.Product', null=True, blank=True, on_delete=models.SET_NULL                      |
 | User Profile | user_profile   | models.ForeignKey    | UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='user_review' |
 | Date Created | created_on     | models.DateTimeField | auto_now_add=True                                                                         |
-| Rating       | review_rating  | models.CharField     | max_length=10, choices=RATING_FIGURES, default="3"                                        |
+| Rating       | review_rating  | models.CharField     | default="3"                                                                               |
 | Title        | review_title   | models.CharField     | max_length=254                                                                            |
 | Content      | review_content | models.TextField     | max_length=1000, null=False, blank=False, default=''                                      |
 
@@ -394,6 +394,10 @@ All pages consist of a fixed nav bar visible at all times. It features a search 
 Footer:
 
 As with the navigation bar, all pages consist of a page footer. Here the user can click social media icons foind in the center of the footer, taking them to the corresponding social media pages. To the left of these icons a disclaimer is displayed that the site is copyright to me, the site owner, and to the right a clickable link taking the user to the contact page.
+
+Back to Top Button:
+
+A back to top button is displayed to the user at the bottom right of the screen across all pages when the user scrolls down past 200px.
 
 Landing Page:
 
@@ -438,10 +442,6 @@ Back to top button:
 
 A back to top button becomes visble across all pages when a user scrolls past 200 pixels. The colour changes to the yellow from the colour scheme when hovered over, and when click, scrolls at a set speed back to the top of the page.
 
-Toasts:
-
-All pages have the ability to display toast messages to the user, which are displayed below the navbar on the right hand side. There are four different types of toast messages: success, error, warning and info. The toast colours will change to reflect each type of message. When a user adds a product to their basket, the success toast is rendered, displaying the contents of their basket, and the total excluding the discount. At the bottom of the toast a button is given for the user to go to secure checkout and open their basket page to review their order.
-
 Product Management Page:
 
 This page is only visible to a superuser. It can be accessed by logging in, and finding the link in the dropdown of the 'my account' link of the navbar. The purpose of this page is for the store owner(superuser) to add a product to the site. The page loads a form with all fields of a product, having the required fields marked by a \*. There is a 'Select Image' button to upload an image from the superusers computer, where upon choosing an image, the image chosen name displayed below the button. Below the form, is a canel btton to cancel the process, and a button for added the product to the site. if the form is not valid, the the from will not be submitted and the user will be notified of which fields to fill in.
@@ -450,20 +450,47 @@ Contact Page:
 
 This page is accessed by clicking on 'Contact Us' on the right side of the footer. It renders a simple form with the purpose of a user sending a message to the store, for enquiries or simple questions, all relevant nonetheless. When the form is submitted, the user is present with a success message as a toast, or else an error message if the form is not valid.
 
+Toasts:
+
+All pages have the ability to display toast messages to the user, which are displayed below the navbar on the right hand side. There are four different types of toast messages: success, error, warning and info. The toast colours will change to reflect each type of message. When a user adds a product to their basket, the success toast is rendered, displaying the contents of their basket, and the total excluding the discount. At the bottom of the toast a button is given for the user to go to secure checkout and open their basket page to review their order.
+
+Delete Modal:
+
+If the user is a superuser, they willl have the ability to edit and delete products and blogs. Upon clicking the delete but, a modal will pop up at the top of the screen, asking them to confirm they want to delete the chosen product or blog. They can simply hit the cancel button which will just close the modal and keep them on the page they are on.
+
 ### Future Features
 
 Time was against me with this project, and unfortuantly I wasn't able to implement all the features that I want for this site. The possibilities for an e-commerce site like this could be endless, but some features I wanted to include are:
 
 - A Newsletter
-  A section found as part of the footer for a user to enter their email address and subscribe to a newsletter.
+
+  - A section found as part of the footer for a user to enter their email address and subscribe to a newsletter, receiving monthly subscriptions once a fully running site.
+
 - Account login via social media
-  For the modern times that we live in now, nearly everyone has a social media account. Being able to log in to this site using their social media accounts would be very desirable as it would save them having to manually enter their details into the register form, and with that their email addrerss would be automatically confirmed as they would have had to allow access from their chosen social media sign up choice.
+
+  - I would have liked to incorporate the user having the ability to sign in to the site using their social media accounts. In the world we live in now nearly everyone has a social media account. Being able to log in to this site using their social media accounts would be very desirable as it would save them having to manually enter their details into the register form, and with that their email addrerss would be automatically confirmed as they would have had to allow access from their chosen social media sign up choice.
+
+- Custom error pages
+
+  - Having custom error pages built in to keep everything on site erradicating the need to use defualt error pages that may be less informative.
+
+- Edit and Delete functions of reviews
+
+  - It would be nice for a user that after submitting a review to a product they can edit that review post in case of a typo or spelling error. It would also be very useful for the store owner to have the ability to dlete a review, in case their is any bad laguage or discrimination posted with the reviews.
+
+- Breadcrumb navigation
+
+  - Using a breadcrumb navigation would allow for an even easier navigation of the site, enabling a user to easily see what page they are on, how it is they got there, and moving back to the desired page.
+
+Unfortunately the time scale of this project is quite short for the quantity of work to be done here and is a massive learning curve, so there are just the surface of what I would like to incorporate to this site to make the user experience that much better and the general use of the site that more clean, tidy and desirable.
 
 [Back to Top](#table-of-contents)
 
 ---
 
-## Testing
+## **Testing**
+
+Testing of this site can be found [here](https://github.com/Gregory4321/cooks_finest/blob/master/testing.md) in a seperate file
 
 ---
 
@@ -773,9 +800,33 @@ This file will link with the settings from above ^^ and tells Django that during
 
 ### Content
 
+All content on the website was written by me, the developer, with inspiration taken from other food and recipe sites and e-commerce stores.
+
 ### Code
 
+- The code throughout this project used [Bootstrap](https://getbootstrap.com/) to help keep the site responsive to the different screen sizes, allowing for layout changes and font sizes to take place with ease.
+
+- I used inspiration from all of my previous milestone projects in implementing certain areas of code.
+
+- [Stackoverflow](https://stackoverflow.com/) was a useful place to find hints and solutions to fix problems to code and it's implementation.
+
+- Tutor support provided me with support and code logic tips to help get my reviews app enabled.
+
+- There are some areas of the code that were taken from other sites, and have been credited as a comment above the code, such as the back to top button and the icon display format.
+
+A healthy portion of this projects code was inspired by and coded alongside the Boutique Ado walkthrough videos from Code Institute, helping set up the site and making use of the django allauth template logic. The code was used as a template and then edited, adapted and customised to suit the design and purpose of the project. My own two models of the blog app and reviews app were inspired by many google searches and research of different current sites and stackoverflow questions along with the django docs to create the two functioning models.
+
 ### Media
+
+The images used on the website were mostly taken from [Google Images](https://www.google.com/) for use as the products images. [Unsplash](https://unsplash.com/) was also used to find other suitable images for use across the site.
+
+These images were then resized to my required sizes for use on the site to keep any stretching or shrinking of images to the bare minimum. To do this I used two site:
+
+- [Canva](https://www.canva.com/)
+
+- [Picresize](https://picresize.com/)
+
+The favicon image was created and exported to my computer using the site Canva, and then uploaded to the site [Favicon.io] (https://favicon.io/) to be generated as an ico image, to then be exported back to my computer and then added to my root directory on gitpod.
 
 ---
 
@@ -783,9 +834,38 @@ This file will link with the settings from above ^^ and tells Django that during
 
 ### Pages used for inspiration
 
+- [Lakeland](https://www.lakeland.co.uk/)
+- [ProCook](https://www.procook.co.uk/)
+- [Sous Chef](https://www.souschef.co.uk/)
+- [Wayfair](https://www.wayfair.co.uk/)
+
 ### Pages used for information
 
+- [Code Institute](https://codeinstitute.net/)
+- [Django Documentation](https://docs.djangoproject.com/en/3.2/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Stack overflow](https://stackoverflow.com/)
+- [W3schools](https://www.w3schools.com/)
+- [CSS-Tricks](https://css-tricks.com/)
+- [Slack](https://slack.com/intl/en-gb/)
+- [YouTube](https://www.youtube.com/)
+- [Code Pen](https://codepen.io/)
+- [Python Documentation](https://docs.python.org/3/)
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
 ### Special thanks
+
+- My extended thanks goes out to my mentor [Oluwaseun Owonikoko](https://github.com/seunkoko) for her help, support and guidance along this journey of the Code Institue's Full Stack Web Developer Course.
+
+- Code Institute's Tutor Support for being there to curve ball me to the solution I was needed, and their understanding and patience.
+
+- The Slack community for the useful questions and information already present, but my fellow students, alumni, tutors and mentors that are present daiy to help aid problem solving.
+
+- A special thanks to [Chris Zielinski](https://github.com/ckz8780) for his extremely helpful training videos and for his guidance throughout this project.
+
+- My family and friends for their feedback during the build and testing stages.
+
+- My nearest and dearest for supporting me along my journey to complete this Ful Stack Web Developer Course, and having such patient with me over this last year.
 
 ## **Disclaimer**
 
