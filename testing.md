@@ -55,7 +55,7 @@ All js files were tested automatically using JSHint. No errors were given from t
 
 #### Python
 
-The pylint-django extension was installed to the workspace through the command line. This was a great tool to check that all python code had no errors, and over come any code that was tripping up due to Django syntax. I had to create a settings.json file to load the plugs of pyint-django, enabling it to work properly. This straight away resolved some of the issues I had appearing in Django syntax. The special character must be escaped error was removed, and the Class ‘’ has no ‘objects’ member was resolved for all of these occurences.
+The pylint-django extension was installed to the workspace through the command line. This was a great tool to check that all python code had no errors, and over come any code that was tripping up due to Django syntax. I had to create a settings.json file to load the plugs of pyint-django, enabling it to work properly. This straight away resolved some of the issues I had appearing in Django syntax. The special character must be escaped error was removed, and the Class ‘’ has no ‘objects’ member was resolved for all of these occurrences.
 
 ![Special Escape Warning](media/readme_content/testing_images/special-escape.png)
 
@@ -151,7 +151,7 @@ To conform with markdown requirements I installed the markdown-lint extension. T
 
 17. As a site user I want to be able to view the items in my basket so that I can see what I am purchasing and the total cost.
 
-- A user can direct to the basket page by clicking the basket icon from the navbar. Here they can clearly see each added item spread out as a table with the subtotal at the end, and then the order total at the bottom of the page.
+- A user can direct to the basket page by clicking the basket icon from the nav bar. Here they can clearly see each added item spread out as a table with the subtotal at the end, and then the order total at the bottom of the page.
 
 18. As a site user I want to be able to adjust the quantity of individual items in my basket so that I can effortlessly make changes before checkout.
 
@@ -257,7 +257,7 @@ Manual testing was thorough throughout the development of this site, but once I 
 
 - Contact Us link - directs the user to the contact form page
 
-  - On destop, upon hover of the social icons and contact link they turn yellow
+  - On desktop, upon hover of the social icons and contact link they turn yellow
 
   - On mobile, upon clicking the social icons and contact link they turn yellow
 
@@ -513,7 +513,7 @@ All call to action buttons text colour change to yellow when hovered over.
 
 ## Bugs
 
-Before discovering the pylint-django extension, I tried to fix the special characters must be escaped linting error by using character entities. Unfortuantely this threw another error
+Before discovering the pylint-django extension, I tried to fix the special characters must be escaped linting error by using character entities. Unfortunately this threw another error
 
 ![Fix error attempt](media/readme_content/testing_images/spec-char-fix.png)
 
@@ -521,10 +521,32 @@ During the implementation of the quantity selector box of the basket page, I was
 
 ![Quantity box bug](media/readme_content/testing_images/quant-box-error.png)
 
-Upon ispection of the home screen on smaller sizes, I found that the content below the jumbotron was not full width and got smaller the smaller the screen size got. Upon thorough investigation and help from a fellow slack member I discovered that where I had set the jumbotrons width to 450 pixels, it meant that the rest of the page content got squashed once the screen resolution fell below 450 pixels. For this I changed the width of the jumbotron and gave it media queries for the smaller screen sizes.
+Upon inspection of the home screen on smaller sizes, I found that the content below the jumbotron was not full width and got smaller the smaller the screen size got. Upon thorough investigation and help from a fellow slack member I discovered that where I had set the jumbotrons width to 450 pixels, it meant that the rest of the page content got squashed once the screen resolution fell below 450 pixels. For this I changed the width of the jumbotron and gave it media queries for the smaller screen sizes.
 
 ![Content shrinking on screen](media/readme_content/testing_images/home-error.png)
 
 A bug occurred when I was trying to add a review to a product. I had the logic all in place, but soon discovered that I had put the calculate_rating function outside of the product model, so it was not being called properly, and threw an error.
 
 ![Calculate rating error](media/readme_content/testing_images/calc-rat-error.png)
+
+The terminal windows problem tab was a great way to debug my code along the development process and was used to indicate nay problems along the way. Problems I found from this were used to rectify any mistakes in code, linting errors, and warnings.
+
+![Trailing error in markdown](media/readme_content/testing_images/prob-tab.png)
+
+![Syntax mistake](media/readme_content/testing_images/terminal-errors.png)
+
+## User Testing
+
+### Peer Code Review
+
+I submitted my code to the peer-code-review channel page of the Slack community for Code Institute. Unfortunately I only had one reply for this project review submission, however it did point out an issue where the user got a "Server Error (500)" when adding a review to a product. This unfortunately took a long time to discovered, a led to a lot of work needing to be done in the short time I had left. It seemed that the code had not been migrated to the Postgres database, despite the code being pushed and migrated. Trying to solve this I then discovered that the code was now not migrating at all. I decided to use my initiative and destroy the current database, reinstate a new one, and start fresh. I choose to do this because of the length of time I had left before submission was short, and thorough searches on google was leading me to no quick solutions. For some reason when I created the new database, the db.json file that I had used to dump the data from my SQLite3 database in development didn't load the data, so I had to manually re add the data, but thankfully I hadn't fully completed adding products, but this still was a lengthy process. Overall, it fixed the problem, and a user can now add a review to a product.
+
+![Migration error](media/readme_content/testing_images/mig-error.png)
+
+### User Review
+
+I sent my project out to various friends and family members who kindly tested my site for themselves. I received very positive feedback from all parties on design and user experience. I was praised for how well the site flowed. There was one recommendation on this though that at times a user found it easier to use the back buttons of their browser on pages like the blog posts pages, and that inbuilt back buttons could be a good implementation. Unfortunately, I had planned to include a breadcrumb navigation bar, but with the time I had on this project, I sadly didn't have the time to implement it. Another user loved how the products were laid out, and how it looked and worked all the same on the different screen sizes.
+
+### Further Testing
+
+The website was tested on Google Chrome, Internet Explorer and Safari browsers. It was viewed on a range of different devices, such as desktop, laptops, iPhone 5S, iPhone 8 plus, iPhone 12 Pro, iPhoneX, iPad 2019, and Samsung Galaxy. Extensive testing was carried out to make sure the links were working correctly, and that the images loaded correctly, on the site but as well as the documentation. Google Dev Tools was used also throughout the development of this project and was a very handy tool in dealing with decisions of paddings and margins, and general layout of the site.
